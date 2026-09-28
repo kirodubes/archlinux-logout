@@ -402,11 +402,6 @@ def _get_logout():
         return _waybar_stack + "pkill wayfire"
     elif desktop in ("newm", "/usr/share/wayland-sessions/newm"):
         return "pkill newm"
-    elif desktop in ("miracle-wm", "/usr/share/wayland-sessions/miracle-wm"):
-        # Mir-based i3/sway-style tiler (package miracle-wm-git; Erik sometimes calls it
-        # "magic-wm"). Not a Kiro edition, so no waybar stack; SIGTERM (pkill default)
-        # shuts the Mir compositor down cleanly.
-        return "pkill miracle-wm"
     # niri runs as a systemd user service (niri.service, Type=notify): its own
     # `niri msg action quit -s` cleanly stops graphical-session.target and takes the
     # shell it spawned down with it. `pkill niri` hard-kills the compositor out from

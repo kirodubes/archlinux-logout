@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.09.28
+
+### Miracle logout detection removed
+
+**What Changed.** Removed the `miracle-wm` branch from the logout-command detection. Miracle has been
+dropped from Kiro: `mir` broke on the boost 1.92 soname bump and can no longer be rebuilt (its `wlcs`
+build dependency is gone), so `miracle-wm-git`, `mir` and `kiro-miracle` left nemesis_repo and ATT.
+
+**Technical Details.** A leftover Miracle session now falls through to the generic handler, like any
+other desktop logout doesn't know about.
+
+**Files Modified.**
+- `usr/share/archlinux-logout/Functions.py`
+
 ## 2026.07.18
 
 ### herbstluftwm (kiro-hlwm) logout detection
