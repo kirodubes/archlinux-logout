@@ -14,6 +14,17 @@ other desktop logout doesn't know about.
 **Files Modified.**
 - `usr/share/archlinux-logout/Functions.py`
 
+### Pin ruff to the classic rule set
+
+**What Changed.** Added `ruff.toml` (same as ATT's). ruff 0.16 widened its implicit rule set, so the
+global pre-commit hook began failing `up.sh` on untouched code (BLE001, PLW1510, I001...).
+
+**Technical Details.** `select = ["E4", "E7", "E9", "F"]`, `line-length = 120`, `E402` ignored for
+`gi.require_version()`. No code changes needed; `ruff check .` passes.
+
+**Files Modified.**
+- `ruff.toml` (new)
+
 ## 2026.07.18
 
 ### herbstluftwm (kiro-hlwm) logout detection
