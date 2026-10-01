@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A GTK4-based fullscreen power management overlay for Arch Linux. Provides shutdown, restart, suspend, hibernate, lock, and logout via themed SVG buttons on a transparent fullscreen window. Ships as `archlinux-logout-gtk4` in the `nemesis_repo` package repo.
+A GTK4-based fullscreen power management overlay for Arch Linux. Provides shutdown, restart, suspend, hibernate, lock, and logout via themed SVG buttons on a transparent fullscreen window. Ships as `archlinux-logout` in the `nemesis_repo` package repo.
 
 ## Running
 

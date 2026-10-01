@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026.10.01
+
+### Renamed from archlinux-logout-gtk4
+
+**What Changed.** The logout app's package and repo names carried a GTK version suffix that says nothing to users. Everything it installs was already named `archlinux-logout`, so only the package name and the references to it change. The source repo moved to `~/KIRO/archlinux-logout` and GitHub `kirodubes/archlinux-logout`.
+
+**Technical Details.** Remote URL repointed. No code change: `/usr/bin/archlinux-logout`, `/usr/share/archlinux-logout/` and `/etc/archlinux-logout.conf` already had the neutral name.
+
+**Files Modified.**
+- `README.md` (install command, tree)
+- `CLAUDE.md`
+
 ## 2026.09.28
 
 ### Miracle logout detection removed

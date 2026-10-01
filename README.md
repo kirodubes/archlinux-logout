@@ -19,7 +19,7 @@ Server = https://erikdubois.github.io/$repo/$arch
 Then install 
 
 ```
-sudo pacman -S archlinux-logout-gtk4-git.
+sudo pacman -S archlinux-logout
 ```
 
 ## Overview
@@ -223,7 +223,7 @@ Clone the repository and follow the build instructions in the PKGBUILD file.
 ### Project Structure
 
 ```text
-archlinux-logout-gtk4/
+archlinux-logout/
 ├── usr/share/archlinux-logout/
 │   ├── archlinux-logout.py       # Main application entry point
 │   ├── GUI.py                    # GTK4 UI components
