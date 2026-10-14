@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026.10.14
+
+### What Changed
+- Detect noctalia v5 on plain niri sessions. noctalia-shell v4 (Quickshell) broke on Qt 6.12: noctalia-qs was built against Qt 6.11, so every themed widget got an undefined colour and the bar rendered as empty pills. v4 is unmaintained upstream and [cachyos] now ships v5 under the noctalia-shell name without shell.qml. Native noctalia v5.2.1 from Arch [extra] was live-tested on a real-metal test box and works.
+
+### Technical Details
+- The plain-niri shell probe now looks for the native `noctalia` process (`pgrep -x noctalia`) instead of v4's `qs -c noctalia-shell`. Comments updated.
+
+### Files Modified
+- usr/share/archlinux-logout/Functions.py
+
 ## 2026.10.01
 
 ### Renamed from archlinux-logout-gtk4

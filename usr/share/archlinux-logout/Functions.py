@@ -327,7 +327,7 @@ def _get_logout():
         # Hyprland (Wayland). Under uwsm use its graceful, ordered shutdown; otherwise the
         # native compositor exit. Never pkill — it's a hard kill and breaks uwsm's shutdown.
         # kiro-hyprland-noctalia ships its own session (DESKTOP_SESSION=kiro-hyprland-noctalia)
-        # but is plain Hyprland underneath; noctalia-shell is a Hyprland child so the clean
+        # but is plain Hyprland underneath; noctalia is a Hyprland child so the clean
         # compositor exit takes it down — same handling as any other Hyprland session.
         try:
             uwsm_managed = subprocess.run(
@@ -412,7 +412,7 @@ def _get_logout():
     elif desktop in ("kiro-niri-noctalia", "kiro-niri",
                      "/usr/share/wayland-sessions/kiro-niri-noctalia",
                      "/usr/share/wayland-sessions/kiro-niri"):
-        # noctalia-shell is a child of niri, so the clean quit takes it down.
+        # noctalia is a child of niri, so the clean quit takes it down.
         # Session file was renamed kiro-niri.desktop -> kiro-niri-noctalia.desktop;
         # the old id is kept as an alias so pre-rename installs still match.
         return "niri msg action quit -s"
@@ -431,7 +431,7 @@ def _get_logout():
         # runtime shell probe to tell the editions apart.
         try:
             noctalia_running = subprocess.run(
-                ["pgrep", "-f", "qs -c noctalia-shell"],
+                ["pgrep", "-x", "noctalia"],
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             ).returncode == 0
         except Exception:
