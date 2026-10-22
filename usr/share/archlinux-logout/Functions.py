@@ -398,7 +398,10 @@ def _get_logout():
         return _waybar_stack + "pkill scroll"
     elif desktop in ("river", "/usr/share/wayland-sessions/river"):
         return _waybar_stack + "pkill river"
-    elif desktop in ("wayfire", "/usr/share/wayland-sessions/wayfire"):
+    elif desktop in ("wayfire", "kiro-wayfire", "/usr/share/wayland-sessions/wayfire",
+                     "/usr/share/wayland-sessions/kiro-wayfire"):
+        # kiro-wayfire.desktop (2026-10-22) starts wayfire through kiro-wayfire-session, so DESKTOP_SESSION is
+        # "kiro-wayfire"; without the alias it fell through to "pkill kiro-wayfire" and logout did nothing.
         return _waybar_stack + "pkill wayfire"
     elif desktop in ("newm", "/usr/share/wayland-sessions/newm"):
         return "pkill newm"

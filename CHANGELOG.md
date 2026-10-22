@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026.10.22
+
+### What Changed
+- Logout works again on Kiro Wayfire. kiro-wayfire now has its own session, "Kiro Wayfire" (`kiro-wayfire.desktop`),
+  so `DESKTOP_SESSION` is `kiro-wayfire`. That name wasn't in the logout map, so it fell through to
+  `pkill kiro-wayfire`, which matches no process: the logout button did nothing.
+
+### Technical Details
+- The wayfire branch in `_get_logout()` also matches `kiro-wayfire` and `/usr/share/wayland-sessions/kiro-wayfire`
+  (same command: stop the waybar stack, then `pkill wayfire`), like the `kiro-mango` alias. Checked:
+  `DESKTOP_SESSION=kiro-wayfire` and `=wayfire` both give the same command, here and on the QEMU install.
+
+### Files Modified
+- usr/share/archlinux-logout/Functions.py
+
 ## 2026.10.14
 
 ### What Changed
