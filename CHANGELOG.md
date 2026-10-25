@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026.10.25
+
+### What Changed
+- Starting ArchLinux BetterLockScreen while it is open brings its window to the front instead of showing "Lock File Found".
+
+### Technical Details
+- GTK keeps one instance per `application_id`, so a second launch runs the activate handler again in the running app. It now presents `get_active_window()` when there is one. Same fix as ATT, ohmychadwm-tweak-tool and the KiroTux premium apps. Tested on a test box (Xvfb, own D-Bus session). The check runs before the lock-file check; the lock still covers another session bus or a crash. Second launch: old 3 windows (lock dialog + helper), new 1.
+
+### Files Modified
+- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`
+- `CHANGELOG.md`
+
 ## 2026.10.22
 
 ### What Changed

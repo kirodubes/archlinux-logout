@@ -232,6 +232,12 @@ class BetterLockScreenApp(Gtk.Application):
         super().__init__(application_id="org.archlinux.betterlockscreen")
 
     def do_activate(self):
+        # A second launch activates this running instance again: raise its window instead of reporting our own
+        # lock file. The lock still catches what GTK can't: another session bus, a crash.
+        window = self.get_active_window()
+        if window is not None:
+            window.present()
+            return
         if not fn.os.path.isfile("/tmp/archlinux-betterlock.lock"):
             try:
                 with open("/tmp/archlinux-betterlock.pid", "w") as f:
