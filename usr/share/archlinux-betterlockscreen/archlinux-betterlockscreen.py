@@ -188,29 +188,31 @@ class Main(Gtk.ApplicationWindow):
             return 0
         # Every way of loading (dropdown, Browse, Load, Default) passes here, so this remembers them all
         fn.save_path(paths)
-        try:
-            GLib.idle_add(self.status.set_text, "Loading images...")
-            ext = (".png", ".jpg", ".jpeg")
-            images = []
-            # followlinks stays False so a symlink loop can't make the walk endless
-            for root, dirs, files in fn.os.walk(paths):
-                dirs.sort()
-                images.extend(fn.os.path.join(root, x) for x in sorted(files)
-                              if x.lower().endswith(ext) and search in x)
-            for image in images:
-                # A newer load started; stop filling the grid with this folder
-                if gen != self._load_gen:
-                    return 0
+        GLib.idle_add(self.status.set_text, "Loading images...")
+        ext = (".png", ".jpg", ".jpeg", ".webp")
+        images = []
+        # followlinks stays False so a symlink loop can't make the walk endless
+        for root, dirs, files in fn.os.walk(paths):
+            dirs.sort()
+            images.extend(fn.os.path.join(root, x) for x in sorted(files)
+                          if x.lower().endswith(ext) and search in x)
+        for image in images:
+            # A newer load started; stop filling the grid with this folder
+            if gen != self._load_gen:
+                return 0
+            # Skip a broken or half-downloaded file instead of ending the whole load on it
+            try:
                 pb = GdkPixbuf.Pixbuf().new_from_file_at_size(image, 320, 180)
-                pimage = Gtk.Picture()
-                pimage.set_name(image)
-                pimage.set_paintable(Gdk.Texture.new_for_pixbuf(pb))
-                pimage.set_can_shrink(False)
-                pimage.set_content_fit(Gtk.ContentFit.FILL)
-                pimage.set_size_request(320, 180)
-                GLib.idle_add(self._append_if_current, pimage, gen)
-        except Exception as e:
-            print(e)
+            except GLib.Error as e:
+                print(f"[WARN]: Skipping {image}: {e.message}")
+                continue
+            pimage = Gtk.Picture()
+            pimage.set_name(image)
+            pimage.set_paintable(Gdk.Texture.new_for_pixbuf(pb))
+            pimage.set_can_shrink(False)
+            pimage.set_content_fit(Gtk.ContentFit.FILL)
+            pimage.set_size_request(320, 180)
+            GLib.idle_add(self._append_if_current, pimage, gen)
         GLib.idle_add(self.status.set_text, "")
 
     def on_social_clicked(self, widget, link):
