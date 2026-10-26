@@ -94,9 +94,19 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
 
     btnsearch.set_size_request(130, 0)
 
+    presets = fn.preset_folders()
+    dd_presets = Gtk.DropDown.new_from_strings(presets)
+    dd_presets.set_tooltip_text("Known wallpaper folders - pick one to load it")
+    # notify::selected only fires on a change, so start empty unless the current folder is a preset;
+    # otherwise the preselected entry could never be picked
+    current = self.loc.get_text()
+    dd_presets.set_selected(presets.index(current) if current in presets else Gtk.INVALID_LIST_POSITION)
+    dd_presets.connect("notify::selected", self.on_preset_selected)
+
     lbl.set_margin_start(10)
     lbl.set_margin_end(0)
     hbox6.append(lbl)
+    hbox6.append(dd_presets)
     hbox6.append(self.loc)
     btnbrowse.set_margin_start(5)
     hbox6.append(btnbrowse)

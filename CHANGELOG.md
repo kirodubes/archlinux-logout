@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026.10.26
+
+### What Changed
+- ArchLinux BetterLockScreen: a dropdown next to "Enter Location" lists the known wallpaper folders: its own wallpapers, `/usr/share/backgrounds`, `~/.config/variety`, `~/Templates/wallpapers` and `~/Pictures`. Only folders that exist are listed. Picking one loads it straight away.
+- Loading a folder also shows the images in all its subfolders (variety keeps its images in subfolders).
+- The last folder loaded is remembered, whichever way it was loaded: dropdown, Browse ("..."), Load or Default. The app opens on it the next time. Before, only Browse saved a folder, and once one was saved, Load ignored a folder typed into the field.
+
+### Technical Details
+- Same picker behaviour as the ATT Wallpaper page. `Functions.py` gets `default_wallpapers`, `preset_folders()` and `save_path()`. Every load goes through `_start_load()`, which reads the location and search text on the GTK thread and hands plain values to the worker thread. `create_flowbox(path, search, gen)` uses the given folder (empty means the default), saves it, and walks it with `os.walk` (sorted, `followlinks` off so a symlink loop can't make the walk endless).
+- A load counter (`_load_gen`) stops an older load as soon as a new one starts, and `_append_if_current` drops images an older load had already queued, so two folders never mix in the grid.
+- The dropdown starts on no selection unless the current folder is in the list: `notify::selected` only fires on a change, so a preselected entry could never be picked.
+
+### Files Modified
+- `usr/share/archlinux-betterlockscreen/Functions.py`
+- `usr/share/archlinux-betterlockscreen/GUI.py`
+- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`
+
 ## 2026.10.25
 
 ### What Changed

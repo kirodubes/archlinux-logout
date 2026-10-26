@@ -76,6 +76,10 @@ class Main(Gtk.ApplicationWindow):
         scrolled.set_hexpand(True)
         scrolled.set_vexpand(True)
 
+        self._load_gen = 0
+        saved = fn.get_saved_path()
+        self.loc.set_text(saved if fn.os.path.isdir(saved) else fn.default_wallpapers)
+
         GUI.GUI(self, Gtk, GdkPixbuf, Gdk, th, fn)
 
         with open("/tmp/archlinux-betterlock.lock", "w") as f:
@@ -90,16 +94,33 @@ class Main(Gtk.ApplicationWindow):
         self.set_titlebar(header)
 
     def _load_initial_flowbox(self):
-        t = th.Thread(target=self.create_flowbox, args=(self.loc.get_text(), False))
+        self._start_load(self.loc.get_text())
+        return False
+
+    def _start_load(self, path):
+        self._clear_flowbox()
+        self._load_gen += 1
+        # Widgets are read here on the GTK thread; the worker only gets plain values
+        t = th.Thread(target=self.create_flowbox, args=(path, self.search.get_text(), self._load_gen))
         t.daemon = True
         t.start()
+
+    def _append_if_current(self, picture, gen):
+        # Images queued by an older load may still arrive after the grid was cleared
+        if gen == self._load_gen:
+            self.fb.append(picture)
         return False
 
     def on_default_clicked(self, _widget):
-        self._clear_flowbox()
-        t = th.Thread(target=self.create_flowbox, args=(self.loc.get_text(), True))
-        t.daemon = True
-        t.start()
+        self.loc.set_text(fn.default_wallpapers)
+        self._start_load(fn.default_wallpapers)
+
+    def on_preset_selected(self, dropdown, _pspec):
+        item = dropdown.get_selected_item()
+        if item is None:
+            return
+        self.loc.set_text(item.get_string())
+        self._start_load(item.get_string())
 
     def on_support_clicked(self, _widget):
         sup = Support.Support(self)
@@ -133,16 +154,10 @@ class Main(Gtk.ApplicationWindow):
             self.image_path = image.get_name()
 
     def on_load_clicked(self, _widget):
-        self._clear_flowbox()
-        t = th.Thread(target=self.create_flowbox, args=(self.loc.get_text(), False))
-        t.daemon = True
-        t.start()
+        self._start_load(self.loc.get_text())
 
     def on_search_clicked(self, _widget):
-        self._clear_flowbox()
-        t = th.Thread(target=self.create_flowbox, args=(self.loc.get_text(), False))
-        t.daemon = True
-        t.start()
+        self._start_load(self.loc.get_text())
 
     def _clear_flowbox(self):
         while True:
@@ -161,47 +176,39 @@ class Main(Gtk.ApplicationWindow):
             folder = dialog.select_folder_finish(result)
             path = folder.get_path()
             self.loc.set_text(path)
-            with open(fn.config + fn.settings, "w") as f:
-                f.write("path=" + path)
+            self._start_load(path)
         except Exception as e:
             print(f"[DEBUG]: Folder dialog: {e}")
 
-    def create_flowbox(self, text, default):
-        if not default:
-            paths = fn.get_saved_path()
-            if len(paths) < 1:
-                if len(text) < 1:
-                    paths = "/usr/share/archlinux-betterlockscreen/wallpapers/"
-                    if not fn.os.path.isdir(paths):
-                        return 0
-                else:
-                    paths = text
-        else:
-            paths = "/usr/share/archlinux-betterlockscreen/wallpapers/"
-            if not fn.os.path.isdir(paths):
-                return 0
-
-        if paths.endswith("/"):
-            paths = paths[:-1]
+    def create_flowbox(self, paths, search, gen):
+        paths = paths.strip().rstrip("/") or fn.default_wallpapers
 
         if not fn.os.path.isdir(paths):
             GLib.idle_add(self.status.set_text, "That directory not found!")
             return 0
+        # Every way of loading (dropdown, Browse, Load, Default) passes here, so this remembers them all
+        fn.save_path(paths)
         try:
-            ext = [".png", ".jpg", ".jpeg"]
-            images = [x for x in fn.os.listdir(paths) for j in ext
-                      if j in x.lower() if self.search.get_text() in x]
             GLib.idle_add(self.status.set_text, "Loading images...")
+            ext = (".png", ".jpg", ".jpeg")
+            images = []
+            # followlinks stays False so a symlink loop can't make the walk endless
+            for root, dirs, files in fn.os.walk(paths):
+                dirs.sort()
+                images.extend(fn.os.path.join(root, x) for x in sorted(files)
+                              if x.lower().endswith(ext) and search in x)
             for image in images:
-                pb = GdkPixbuf.Pixbuf().new_from_file_at_size(
-                    paths + "/" + image, 320, 180)
+                # A newer load started; stop filling the grid with this folder
+                if gen != self._load_gen:
+                    return 0
+                pb = GdkPixbuf.Pixbuf().new_from_file_at_size(image, 320, 180)
                 pimage = Gtk.Picture()
-                pimage.set_name(paths + "/" + image)
+                pimage.set_name(image)
                 pimage.set_paintable(Gdk.Texture.new_for_pixbuf(pb))
                 pimage.set_can_shrink(False)
                 pimage.set_content_fit(Gtk.ContentFit.FILL)
                 pimage.set_size_request(320, 180)
-                GLib.idle_add(self.fb.append, pimage)
+                GLib.idle_add(self._append_if_current, pimage, gen)
         except Exception as e:
             print(e)
         GLib.idle_add(self.status.set_text, "")

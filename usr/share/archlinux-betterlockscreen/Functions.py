@@ -14,6 +14,7 @@ home = expanduser("~")
 base_dir = os.path.dirname(os.path.realpath(__file__))
 config = home + "/.config/archlinux-betterlockscreen/"
 settings = "settings.conf"
+default_wallpapers = "/usr/share/archlinux-betterlockscreen/wallpapers"
 resolutions = [
     "640x360",
     "800x600",
@@ -48,6 +49,24 @@ def get_saved_path():
         lines = f.readlines()
     pos = _get_position(lines, "path=")
     return lines[pos].split("=")[1].strip()
+
+
+def save_path(path):
+    """Remember the folder that was loaded last."""
+    with open(config + settings, "w") as f:
+        f.write("path=" + path)
+
+
+def preset_folders():
+    """Return the known wallpaper folders that exist on this system."""
+    candidates = [
+        default_wallpapers,
+        "/usr/share/backgrounds",
+        home + "/.config/variety",
+        home + "/Templates/wallpapers",
+        home + "/Pictures",
+    ]
+    return [folder for folder in candidates if os.path.isdir(folder)]
 
 
 def get_betterlockscreen_version():
