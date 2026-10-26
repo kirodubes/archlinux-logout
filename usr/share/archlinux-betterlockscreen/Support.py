@@ -30,7 +30,7 @@ class Support(Gtk.Window):
         label.set_justify(Gtk.Justification.CENTER)
         label.set_markup(
             "Big thank you to our developers for their work on this project.\n"
-            "<b>Brad Heffernan</b> is the driving force aka developer behind the Betterlockscreen GUI. \n"
+            "<b>Brad Heffernan</b> is the driving force aka developer behind the Betterlockscreen GUI. "
             "With the help of <b>Erik Dubois</b> we were able to give our users an easy and efficient tool."
         )
 
