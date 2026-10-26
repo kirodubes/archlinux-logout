@@ -25,7 +25,6 @@ class Support(Gtk.Window):
         self.set_child(vbox)
 
         hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        hbox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         hbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         hbox3 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
@@ -39,25 +38,6 @@ class Support(Gtk.Window):
             "If you want to thank and support <b>Brad</b> personally for his initiative and efforts "
             "then you can do so by following the links."
         )
-
-        label2 = Gtk.Label()
-        label2.set_markup("Support <b>Brad</b> on patreon")
-
-        # --- Patreon button ---
-        pbp = GdkPixbuf.Pixbuf().new_from_file_at_size(
-            os.path.join(base_dir, 'images/patreon.png'), 48, 48)
-        pimage = Gtk.Picture()
-        pimage.set_paintable(Gdk.Texture.new_for_pixbuf(pbp))
-
-        patreon_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        patreon_click = Gtk.GestureClick()
-        patreon_click.connect(
-            "pressed",
-            lambda g, n, x, y: self._open_link("https://www.patreon.com/hefftor")
-        )
-        patreon_box.add_controller(patreon_click)
-        patreon_box.set_tooltip_text("Support BradHeff on Patreon")
-        patreon_box.append(pimage)
 
         # --- PayPal button ---
         pbpp = GdkPixbuf.Pixbuf().new_from_file_at_size(
@@ -81,21 +61,10 @@ class Support(Gtk.Window):
         logo_image = Gtk.Picture()
         logo_image.set_paintable(Gdk.Texture.new_for_pixbuf(logo))
 
-        pE_label = Gtk.Label(label="Patreon")
-
-        vbox1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
-        vbox1.append(patreon_box)
-        vbox1.append(pE_label)
-
         label.set_margin_start(10)
         label.set_margin_end(10)
         hbox.append(label)
 
-        label2.set_margin_start(10)
-        hbox1.append(label2)
-
-        vbox1.set_margin_start(10)
-        hbox2.append(vbox1)
         paypal_box.set_margin_start(10)
         hbox2.append(paypal_box)
 
@@ -108,7 +77,6 @@ class Support(Gtk.Window):
         # pack end equivalents — just append in reverse order with END align
         hbox3.set_valign(Gtk.Align.END)
         hbox3.set_vexpand(True)
-        vbox.append(hbox1)
         vbox.append(hbox3)
 
     def _open_link(self, link):
