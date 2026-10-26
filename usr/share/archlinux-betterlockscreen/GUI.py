@@ -133,10 +133,15 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # ==========================================================
     #                       APPLY BUTTON
     # ==========================================================
+    lbl_lock_hint = Gtk.Label(label="To lock the screen: press Super + X, then K")
+    lbl_lock_hint.add_css_class("info-label")
+    lbl_lock_hint.set_halign(Gtk.Align.END)
+    lbl_lock_hint.set_hexpand(True)
+    hbox2.append(lbl_lock_hint)
+
     self.btnset = Gtk.Button(label="Apply Image")
     self.btnset.connect("clicked", self.on_apply_clicked)
     self.btnset.set_halign(Gtk.Align.END)
-    self.btnset.set_hexpand(True)
     hbox2.append(self.btnset)
 
     # ==========================================================

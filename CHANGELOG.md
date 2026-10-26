@@ -8,6 +8,7 @@
 - The last folder loaded is remembered, whichever way it was loaded: dropdown, Browse ("..."), Load or Default. The app opens on it the next time. Before, only Browse saved a folder, and once one was saved, Load ignored a folder typed into the field.
 - A broken or half-downloaded image no longer stops the loading: it is skipped and the rest of the folder still shows. Before, every image after it stayed missing.
 - WebP images are listed too, next to PNG, JPG and JPEG. betterlockscreen handles them through ImageMagick.
+- A line next to Apply Image tells users how to lock the screen: press Super + X, then K (the `lock=K` shortcut in `archlinux-logout.conf`).
 
 ### Technical Details
 - Same picker behaviour as the ATT Wallpaper page. `Functions.py` gets `default_wallpapers`, `preset_folders()` and `save_path()`. Every load goes through `_start_load()`, which reads the location and search text on the GTK thread and hands plain values to the worker thread. `create_flowbox(path, search, gen)` uses the given folder (empty means the default), saves it, and walks it with `os.walk` (sorted, `followlinks` off so a symlink loop can't make the walk endless).
