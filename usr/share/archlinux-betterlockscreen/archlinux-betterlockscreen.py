@@ -131,10 +131,17 @@ class Main(Gtk.ApplicationWindow):
             fn.show_in_app_notification(self, "You need to select an image first")
         else:
             self.btnset.set_sensitive(False)
+            self.apply_spinner.start()
             self.status.set_text("creating lockscreen images....wait for the message at the top")
             t = th.Thread(target=self.set_lockscreen)
             t.daemon = True
             t.start()
+
+    def _apply_done(self, status):
+        self.apply_spinner.stop()
+        self.btnset.set_sensitive(True)
+        self.status.set_text(status)
+        return False
 
     def set_lockscreen(self):
         command = ["betterlockscreen", "-u", self.image_path,
@@ -142,11 +149,9 @@ class Main(Gtk.ApplicationWindow):
         try:
             subprocess.Popen(command, shell=False).wait()
             fn.show_in_app_notification(self, "Lockscreen set successfully")
-            GLib.idle_add(self.btnset.set_sensitive, True)
-            GLib.idle_add(self.status.set_text, "")
+            GLib.idle_add(self._apply_done, "")
         except Exception:
-            GLib.idle_add(self.status.set_text, "ERROR: is betterlockscreen installed?")
-            GLib.idle_add(self.btnset.set_sensitive, True)
+            GLib.idle_add(self._apply_done, "ERROR: is betterlockscreen installed?")
 
     def on_item_clicked(self, _flowbox, child):
         image = child.get_child()

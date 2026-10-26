@@ -139,6 +139,11 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     lbl_lock_hint.set_hexpand(True)
     hbox2.append(lbl_lock_hint)
 
+    # Spins while betterlockscreen builds its lockscreen images, which takes several seconds
+    self.apply_spinner = Gtk.Spinner()
+    self.apply_spinner.set_tooltip_text("Creating lockscreen images...")
+    hbox2.append(self.apply_spinner)
+
     self.btnset = Gtk.Button(label="Apply Image")
     self.btnset.connect("clicked", self.on_apply_clicked)
     self.btnset.set_halign(Gtk.Align.END)
