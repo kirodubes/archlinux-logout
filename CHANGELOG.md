@@ -9,7 +9,7 @@
 - A broken or half-downloaded image no longer stops the loading: it is skipped and the rest of the folder still shows. Before, every image after it stayed missing.
 - WebP images are listed too, next to PNG, JPG and JPEG. betterlockscreen handles them through ImageMagick.
 - A line next to Apply Image tells users how to lock the screen: press Super + X, then K (the `lock=K` shortcut in `archlinux-logout.conf`).
-- Credits window: the "Support Brad on patreon" line, the Patreon button and the "If you want to thank and support Brad … following the links" sentence are removed. The PayPal button stays.
+- Credits window: the "Support Brad on patreon" line, the Patreon and PayPal buttons and the "If you want to thank and support Brad … following the links" sentence are removed; the window is now just called "Credits". It keeps the logo and the thank-you text.
 
 ### Technical Details
 - Same picker behaviour as the ATT Wallpaper page. `Functions.py` gets `default_wallpapers`, `preset_folders()` and `save_path()`. Every load goes through `_start_load()`, which reads the location and search text on the GTK thread and hands plain values to the worker thread. `create_flowbox(path, search, gen)` uses the given folder (empty means the default), saves it, and walks it with `os.walk` (sorted, `followlinks` off so a symlink loop can't make the walk endless).
@@ -22,7 +22,7 @@
 - `usr/share/archlinux-betterlockscreen/GUI.py`
 - `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`
 - `usr/share/archlinux-betterlockscreen/Support.py`
-- `usr/share/archlinux-betterlockscreen/images/patreon.png` (removed, no longer used)
+- `usr/share/archlinux-betterlockscreen/images/patreon.png`, `images/paypal.png` (removed, no longer used)
 
 ## 2026.10.25
 
