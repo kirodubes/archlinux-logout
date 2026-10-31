@@ -29,6 +29,7 @@ import gi  # noqa: E402
 import shutil  # noqa: E402
 import GUI  # noqa: E402
 import Functions as fn  # noqa: E402
+from alo_i18n import _  # noqa: E402
 import threading  # noqa: E402
 import signal  # noqa: E402
 from distro import id  # noqa: E402
@@ -87,7 +88,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
     aux_icon_size = 32
 
     def __init__(self, app, settings_only=False):
-        super().__init__(application=app, title="ArchLinux Logout")
+        super().__init__(application=app, title=_("ArchLinux Logout"))
 
         self.settings_only = settings_only
 
@@ -140,7 +141,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
         GLib.idle_add(self._build_gui)
 
     def _build_settings_window(self):
-        self.set_title("ArchLinux Logout Settings")
+        self.set_title(_("ArchLinux Logout Settings"))
         self.set_decorated(True)
         self.set_resizable(True)
         self.set_default_size(520, 800)
@@ -173,8 +174,8 @@ class TransparentWindow(Gtk.ApplicationWindow):
         spacer.set_hexpand(True)
         action_bar.append(spacer)
 
-        btn_betterlockscreen = Gtk.Button(label="Open BetterLockScreen")
-        btn_betterlockscreen.set_tooltip_text("Configure the lock screen wallpaper and blur")
+        btn_betterlockscreen = Gtk.Button(label=_("Open BetterLockScreen"))
+        btn_betterlockscreen.set_tooltip_text(_("Configure the lock screen wallpaper and blur"))
         btn_betterlockscreen.connect("clicked", self.on_betterlockscreen_clicked)
         action_bar.append(btn_betterlockscreen)
         action_bar.append(self.btn_save_settings)
@@ -423,7 +424,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imagesh, psh)
             self.lbl1.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Shutdown ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Shut down ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl1)
         elif data == self.binds.get("restart"):
@@ -436,7 +437,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imager, pr)
             self.lbl2.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Reboot ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Restart ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl2)
         elif data == self.binds.get("suspend"):
@@ -449,7 +450,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.images, ps)
             self.lbl3.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Suspend ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Suspend ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl3)
         elif data == self.binds.get("lock"):
@@ -462,7 +463,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imagelk, plk)
             self.lbl4.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Lock ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Lock ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl4)
         elif data == self.binds.get("logout"):
@@ -475,7 +476,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imagelo, plo)
             self.lbl5.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Logout ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Log out ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl5)
         elif data == self.binds.get("cancel"):
@@ -488,7 +489,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imagec, plo)
             self.lbl6.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Cancel ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Cancel ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl6)
         elif data == self.binds.get("hibernate"):
@@ -501,7 +502,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
             )
             fn.set_widget_pixbuf(self.imageh, plo)
             self.lbl7.set_markup(
-                f'<span size="{str(self.font)}000" foreground="{self.hover}">Hibernate ({data})</span>'
+                f'<span size="{str(self.font)}000" foreground="{self.hover}">{_("Hibernate ({key})").format(key=data)}</span>'
             )
             self._start_hover_timer(self.lbl7)
         elif data == self.binds.get("settings"):
@@ -534,7 +535,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imagesh, psh)
                 self.lbl1.set_markup(
-                    f'<span size="{str(self.font)}000">Shutdown ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Shut down ({key})").format(key=data)}</span>'
                 )
                 self.lbl1.set_visible(self.show_text)
             elif data == self.binds.get("restart"):
@@ -547,7 +548,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imager, pr)
                 self.lbl2.set_markup(
-                    f'<span size="{str(self.font)}000">Reboot ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Restart ({key})").format(key=data)}</span>'
                 )
                 self.lbl2.set_visible(self.show_text)
             elif data == self.binds.get("suspend"):
@@ -560,7 +561,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.images, ps)
                 self.lbl3.set_markup(
-                    f'<span size="{str(self.font)}000">Suspend ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Suspend ({key})").format(key=data)}</span>'
                 )
                 self.lbl3.set_visible(self.show_text)
             elif data == self.binds.get("lock"):
@@ -573,7 +574,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imagelk, plk)
                 self.lbl4.set_markup(
-                    f'<span size="{str(self.font)}000">Lock ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Lock ({key})").format(key=data)}</span>'
                 )
                 self.lbl4.set_visible(self.show_text)
             elif data == self.binds.get("logout"):
@@ -586,7 +587,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imagelo, plo)
                 self.lbl5.set_markup(
-                    f'<span size="{str(self.font)}000">Logout ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Log out ({key})").format(key=data)}</span>'
                 )
                 self.lbl5.set_visible(self.show_text)
             elif data == self.binds.get("cancel"):
@@ -599,7 +600,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imagec, plo)
                 self.lbl6.set_markup(
-                    f'<span size="{str(self.font)}000">Cancel ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Cancel ({key})").format(key=data)}</span>'
                 )
                 self.lbl6.set_visible(self.show_text)
             elif data == self.binds.get("hibernate"):
@@ -612,7 +613,7 @@ class TransparentWindow(Gtk.ApplicationWindow):
                 )
                 fn.set_widget_pixbuf(self.imageh, plo)
                 self.lbl7.set_markup(
-                    f'<span size="{str(self.font)}000">Hibernate ({data})</span>'
+                    f'<span size="{str(self.font)}000">{_("Hibernate ({key})").format(key=data)}</span>'
                 )
                 self.lbl7.set_visible(self.show_text)
             elif data == self.binds.get("settings"):
@@ -669,8 +670,8 @@ class TransparentWindow(Gtk.ApplicationWindow):
             command = fn._get_logout()
             if not command:
                 self.message_box(
-                    "No logout command could be detected for this desktop session.",
-                    "Logout command not found",
+                    _("No logout command could be detected for this desktop session."),
+                    _("Logout command not found"),
                 )
                 self.active = False
                 return
@@ -704,14 +705,14 @@ class TransparentWindow(Gtk.ApplicationWindow):
             ):
                 if fn.os.path.isfile(self.wallpaper):
                     self.lbl_stat.set_markup(
-                        '<span size="x-large"><b>Caching lockscreen images for a faster locking next time</b></span>'
+                        _('<span size="x-large"><b>Caching lockscreen images for a faster locking next time</b></span>')
                     )
                     t = threading.Thread(target=fn.cache_bl, args=(self, GLib))
                     t.daemon = True
                     t.start()
                 else:
                     self.lbl_stat.set_markup(
-                        '<span size="x-large"><b>Choose a wallpaper with archlinux-betterlockscreen</b></span>'
+                        _('<span size="x-large"><b>Choose a wallpaper with archlinux-betterlockscreen</b></span>')
                     )
                     self.Ec.set_sensitive(True)
                     self.active = False

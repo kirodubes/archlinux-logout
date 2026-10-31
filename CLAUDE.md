@@ -27,6 +27,18 @@ flake8 usr/share/archlinux-betterlockscreen/
 
 Max line length is 120. Always run flake8 before considering any Python change done.
 
+## Translations (since 2026-10-31)
+
+- Two gettext domains: `archlinux-logout` (`alo_i18n.py`) and `archlinux-betterlockscreen` (`abl_i18n.py`), catalogs in
+  `usr/share/locale`, the choice in `~/.config/<app>/prefs.json` (never in `archlinux-logout.conf`); `ALO_LANGUAGE` /
+  `ABL_LANGUAGE` beat it and the system language. Dropdown top right in the settings window and in BetterLockScreen.
+- Every visible string goes through `_()` as a whole sentence with named placeholders. Button labels stay short and
+  the shortcut keys never change with the language. Never translated: theme names, commands, config keys, logs.
+- After changing any visible text: `po/archlinux-logout/make-mo.sh` and/or `po/archlinux-betterlockscreen/make-mo.sh`.
+  Edit menu entries in `po/<app>/<app>.desktop.in`, never in `usr/share/applications/` (overwritten).
+- Never start the logout overlay in an automated test: its power keys are live. Screenshot only `--settings` and
+  BetterLockScreen, and remove `/tmp/archlinux-betterlock.{lock,pid}` afterwards (killing the GUI leaves them).
+
 ## Architecture
 
 The main app lives in [usr/share/archlinux-logout/](usr/share/archlinux-logout/) across three files with strict separation of concerns:

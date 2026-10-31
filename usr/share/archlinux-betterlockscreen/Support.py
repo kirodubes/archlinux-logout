@@ -1,5 +1,6 @@
 import gi
 from Functions import os
+from abl_i18n import _
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('GdkPixbuf', '2.0')
@@ -11,7 +12,7 @@ base_dir = os.path.dirname(os.path.realpath(__file__))
 class Support(Gtk.Window):
 
     def __init__(self, parent):
-        super().__init__(title="Credits")
+        super().__init__(title=_("Credits"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(550, 100)
@@ -29,9 +30,9 @@ class Support(Gtk.Window):
         label.set_wrap(True)
         label.set_justify(Gtk.Justification.CENTER)
         label.set_markup(
-            "Big thank you to our developers for their work on this project.\n"
-            "<b>Brad Heffernan</b> is the driving force aka developer behind the Betterlockscreen GUI. "
-            "With the help of <b>Erik Dubois</b> we were able to give our users an easy and efficient tool."
+            _("Big thank you to our developers for their work on this project.\n"
+              "<b>Brad Heffernan</b> is the driving force aka developer behind the Betterlockscreen GUI. "
+              "With the help of <b>Erik Dubois</b> we were able to give our users an easy and efficient tool.")
         )
 
         # --- Logo ---

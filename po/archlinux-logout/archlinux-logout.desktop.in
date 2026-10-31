@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=ArchLinux Logout Settings
+GenericName=ArchLinux Logout Settings
+X-GNOME-FullName=ArchLinux Logout Settings
+Comment=Configure the ArchLinux Logout screen — theme, icons, buttons, and text
+Exec=/usr/bin/archlinux-logout --settings
+Icon=system-shutdown
+Terminal=false
+Type=Application
+Categories=GTK;GNOME;Utility;Settings;X-GNOME-Settings-Panel;X-GNOME-SystemSettings;X-Unity-Settings-Panel;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;X-Kiro-Apps;
+Keywords=logout;shutdown;reboot;settings;theme;
+StartupNotify=true

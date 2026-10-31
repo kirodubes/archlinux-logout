@@ -8,6 +8,7 @@ import re
 import shutil
 from pathlib import Path
 import configparser
+from alo_i18n import _
 
 envvar = os.environ.get("XDG_SESSION_TYPE", "")
 sessionw = False
@@ -485,7 +486,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imagesh, psh)
-            self.lbl1.set_markup('<span foreground="white">Shutdown</span>')
+            self.lbl1.set_markup(f'<span foreground="white">{_("Shut down")}</span>')
         elif data == self.binds["restart"]:
             pr = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(working_dir, "themes/" + self.theme + "/restart_blur.svg"),
@@ -493,7 +494,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imager, pr)
-            self.lbl2.set_markup('<span foreground="white">Restart</span>')
+            self.lbl2.set_markup(f'<span foreground="white">{_("Restart")}</span>')
         elif data == self.binds["suspend"]:
             ps = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(working_dir, "themes/" + self.theme + "/suspend_blur.svg"),
@@ -501,7 +502,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.images, ps)
-            self.lbl3.set_markup('<span foreground="white">Suspend</span>')
+            self.lbl3.set_markup(f'<span foreground="white">{_("Suspend")}</span>')
         elif data == self.binds["lock"]:
             plk = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(working_dir, "themes/" + self.theme + "/lock_blur.svg"),
@@ -509,7 +510,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imagelk, plk)
-            self.lbl4.set_markup('<span foreground="white">Lock</span>')
+            self.lbl4.set_markup(f'<span foreground="white">{_("Lock")}</span>')
         elif data == self.binds["logout"]:
             plo = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(working_dir, "themes/" + self.theme + "/logout_blur.svg"),
@@ -517,7 +518,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imagelo, plo)
-            self.lbl5.set_markup('<span foreground="white">Logout</span>')
+            self.lbl5.set_markup(f'<span foreground="white">{_("Log out")}</span>')
         elif data == self.binds["cancel"]:
             plo = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(working_dir, "themes/" + self.theme + "/cancel_blur.svg"),
@@ -525,7 +526,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imagec, plo)
-            self.lbl6.set_markup('<span foreground="white">Cancel</span>')
+            self.lbl6.set_markup(f'<span foreground="white">{_("Cancel")}</span>')
         elif data == self.binds["hibernate"]:
             plo = GdkPixbuf.Pixbuf().new_from_file_at_size(
                 os.path.join(
@@ -535,7 +536,7 @@ def button_active(self, data, GdkPixbuf):
                 icon_size,
             )
             set_widget_pixbuf(self.imageh, plo)
-            self.lbl7.set_markup('<span foreground="white">Hibernate</span>')
+            self.lbl7.set_markup(f'<span foreground="white">{_("Hibernate")}</span>')
     except Exception:
         pass
 

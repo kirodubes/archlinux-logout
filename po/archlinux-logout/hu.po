@@ -1,0 +1,283 @@
+# Hungarian translations for archlinux-logout archlinux-logout.
+# Copyright (C) 2026 THE archlinux-logout'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the archlinux-logout archlinux-logout.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: archlinux-logout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"PO-Revision-Date: 2026-10-31 16:39+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Hungarian\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: usr/share/archlinux-logout/Functions.py:489
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Shut down"
+msgstr "Leállítás"
+
+#: usr/share/archlinux-logout/Functions.py:497
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Restart"
+msgstr "Újraindítás"
+
+#: usr/share/archlinux-logout/Functions.py:505
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Suspend"
+msgstr "Felfüggesztés"
+
+#: usr/share/archlinux-logout/Functions.py:513
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Lock"
+msgstr "Zárolás"
+
+#: usr/share/archlinux-logout/Functions.py:521
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Log out"
+msgstr "Kijelentkezés"
+
+#: usr/share/archlinux-logout/Functions.py:529
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Cancel"
+msgstr "Mégse"
+
+#: usr/share/archlinux-logout/Functions.py:539
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Hibernate"
+msgstr "Hibernálás"
+
+#: usr/share/archlinux-logout/GUI.py:14
+#, python-brace-format
+msgid "System ({language})"
+msgstr "Rendszer ({language})"
+
+#: usr/share/archlinux-logout/GUI.py:17
+msgid "Language"
+msgstr "Nyelv"
+
+#: usr/share/archlinux-logout/GUI.py:22
+msgid "Restart now"
+msgstr "Újraindítás most"
+
+#: usr/share/archlinux-logout/GUI.py:28
+msgid "Saved. The app shows the new language when it starts again."
+msgstr "Mentve. Az alkalmazás a következő indításkor az új nyelven jelenik meg."
+
+#: usr/share/archlinux-logout/GUI.py:45
+msgid "best value — almost all goes to the project"
+msgstr "a legjobb választás: szinte minden a projekthez kerül"
+
+#: usr/share/archlinux-logout/GUI.py:46
+msgid "buy a coffee — one-off tip"
+msgstr "hívj meg egy kávéra: egyszeri borravaló"
+
+#: usr/share/archlinux-logout/GUI.py:47
+msgid "membership tiers + perks"
+msgstr "tagsági szintek extrákkal"
+
+#: usr/share/archlinux-logout/GUI.py:48
+msgid "join on YouTube"
+msgstr "csatlakozz a YouTube-on"
+
+#: usr/share/archlinux-logout/GUI.py:49
+msgid "direct one-off"
+msgstr "közvetlen, egyszeri adomány"
+
+#: usr/share/archlinux-logout/GUI.py:58
+msgid "Support Kiro"
+msgstr "A Kiro támogatása"
+
+#: usr/share/archlinux-logout/GUI.py:66
+msgid "<b>Support Kiro</b>"
+msgstr "<b>Támogasd a Kirot</b>"
+
+#: usr/share/archlinux-logout/GUI.py:74
+msgid ""
+"Kiro and its tools are built by one person, for the community — and kept "
+"free. If ArchLinux Logout saves you time, a little support keeps the work "
+"going. Thank you for being here."
+msgstr "A Kirot és az eszközeit egy ember készíti a közösségnek, és ingyenesen tartja. Ha az ArchLinux Logout időt takarít meg neked, egy kis támogatás segít folytatni a munkát. Köszönjük, hogy itt vagy."
+
+#: usr/share/archlinux-logout/GUI.py:94
+msgid "Close"
+msgstr "Bezárás"
+
+#: usr/share/archlinux-logout/GUI.py:127
+msgid "<b>Opacity:</b>"
+msgstr "<b>Átlátszatlanság:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:132
+msgid "<b>Icon size:</b>"
+msgstr "<b>Ikonméret:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:137
+msgid "<b>Theme:</b>"
+msgstr "<b>Téma:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:142
+msgid "<b>Font size:</b>"
+msgstr "<b>Betűméret:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:194
+msgid "Save Settings"
+msgstr "Beállítások mentése"
+
+#: usr/share/archlinux-logout/GUI.py:211
+msgid "<b>Show text:</b>"
+msgstr "<b>Szöveg megjelenítése:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:244
+msgid "<b>Buttons:</b>"
+msgstr "<b>Gombok:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:275
+#: usr/share/archlinux-logout/archlinux-logout.py:144
+#: po/archlinux-logout/archlinux-logout.desktop.in:2
+#: po/archlinux-logout/archlinux-logout.desktop.in:3
+msgid "ArchLinux Logout Settings"
+msgstr "ArchLinux Logout beállításai"
+
+#: usr/share/archlinux-logout/GUI.py:279
+msgid "♥ Support"
+msgstr "♥ Támogatás"
+
+#: usr/share/archlinux-logout/GUI.py:280
+msgid "Support Kiro's development"
+msgstr "A Kiro fejlesztésének támogatása"
+
+#: usr/share/archlinux-logout/GUI.py:284
+msgid "Quit"
+msgstr "Kilépés"
+
+#: usr/share/archlinux-logout/GUI.py:302
+msgid "Appearance"
+msgstr "Megjelenés"
+
+#: usr/share/archlinux-logout/GUI.py:304
+msgid "Buttons"
+msgstr "Gombok"
+
+#: usr/share/archlinux-logout/GUI.py:308
+msgid "Theme"
+msgstr "Téma"
+
+#: usr/share/archlinux-logout/GUI.py:316
+msgid ""
+"<b>What is this?</b>\n"
+"ArchLinux Logout is the power screen shown when you log out — the row of "
+"buttons for Shutdown, Restart, Suspend, Hibernate, Lock, Logout and Cancel.\n"
+"\n"
+"<b>What you can change here</b>\n"
+"• <b>Opacity</b> — how see-through the logout screen's background is\n"
+"• <b>Icon size</b> — how big the power-button icons are\n"
+"• <b>Font size</b> — the size of the button labels\n"
+"• <b>Show text</b> — whether labels appear under the icons\n"
+"• <b>Buttons</b> — which power actions are offered (tick the ones you want)\n"
+"• <b>Theme</b> — the visual style and icon set of the logout screen\n"
+"\n"
+"Click <b>Save Settings</b> to apply. Changes take effect the next time the "
+"logout screen opens."
+msgstr "<b>Mi ez?</b>\nAz ArchLinux Logout a kijelentkezéskor megjelenő energiakezelő képernyő. Gombokat kínál a leállításhoz, újraindításhoz, felfüggesztéshez, hibernáláshoz, zároláshoz, kijelentkezéshez és megszakításhoz.\n\n<b>Mit módosíthatsz itt</b>\n• <b>Átlátszatlanság</b>: a háttér áttetszősége\n• <b>Ikonméret</b>: a műveletikonok mérete\n• <b>Betűméret</b>: a gombfeliratok mérete\n• <b>Szöveg megjelenítése</b>: látszanak-e feliratok az ikonok alatt\n• <b>Gombok</b>: elérhető műveletek. Jelöld be a kívántakat\n• <b>Téma</b>: a képernyő megjelenése és ikonkészlete\n\nA módosítások alkalmazásához kattints a <b>Beállítások mentése</b> gombra. A következő megnyitáskor lépnek életbe."
+
+#: usr/share/archlinux-logout/GUI.py:461
+#: usr/share/archlinux-logout/archlinux-logout.py:427
+#: usr/share/archlinux-logout/archlinux-logout.py:538
+#, python-brace-format
+msgid "Shut down ({key})"
+msgstr "Leállítás ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:462
+#: usr/share/archlinux-logout/archlinux-logout.py:440
+#: usr/share/archlinux-logout/archlinux-logout.py:551
+#, python-brace-format
+msgid "Restart ({key})"
+msgstr "Újraindítás ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:463
+#: usr/share/archlinux-logout/archlinux-logout.py:453
+#: usr/share/archlinux-logout/archlinux-logout.py:564
+#, python-brace-format
+msgid "Suspend ({key})"
+msgstr "Felfüggesztés ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:464
+#: usr/share/archlinux-logout/archlinux-logout.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:577
+#, python-brace-format
+msgid "Lock ({key})"
+msgstr "Zárolás ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:465
+#: usr/share/archlinux-logout/archlinux-logout.py:479
+#: usr/share/archlinux-logout/archlinux-logout.py:590
+#, python-brace-format
+msgid "Log out ({key})"
+msgstr "Kijelentkezés ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:492
+#: usr/share/archlinux-logout/archlinux-logout.py:603
+#, python-brace-format
+msgid "Cancel ({key})"
+msgstr "Mégse ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:467
+#: usr/share/archlinux-logout/archlinux-logout.py:505
+#: usr/share/archlinux-logout/archlinux-logout.py:616
+#, python-brace-format
+msgid "Hibernate ({key})"
+msgstr "Hibernálás ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:565
+msgid ""
+"<span size=\"large\">You can change the lockscreen wallpaper\n"
+"with <b>Archlinux BetterLockScreen</b></span>"
+msgstr ""
+"<span size=\"large\">A zárolási képernyő háttérképét itt módosíthatod:\n"
+"<b>Archlinux BetterLockScreen</b></span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:91
+msgid "ArchLinux Logout"
+msgstr "ArchLinux Logout"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:177
+msgid "Open BetterLockScreen"
+msgstr "BetterLockScreen megnyitása"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:178
+msgid "Configure the lock screen wallpaper and blur"
+msgstr "A zárolási képernyő háttérképének és elmosásának beállítása"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:673
+msgid "No logout command could be detected for this desktop session."
+msgstr "Nem található kijelentkezési parancs ehhez az asztali munkamenethez."
+
+#: usr/share/archlinux-logout/archlinux-logout.py:674
+msgid "Logout command not found"
+msgstr "A kijelentkezési parancs nem található"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:708
+msgid ""
+"<span size=\"x-large\"><b>Caching lockscreen images for a faster locking "
+"next time</b></span>"
+msgstr "<span size=\"x-large\"><b>A zárolási képek gyorsítótárazása, hogy legközelebb gyorsabb legyen a zárolás</b></span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:715
+msgid ""
+"<span size=\"x-large\"><b>Choose a wallpaper with archlinux-"
+"betterlockscreen</b></span>"
+msgstr "<span size=\"x-large\"><b>Válassz háttérképet az archlinux-betterlockscreen használatával</b></span>"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:5
+msgid "Configure the ArchLinux Logout screen — theme, icons, buttons, and text"
+msgstr "Az ArchLinux Logout képernyő beállítása: téma, ikonok, gombok és szöveg"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:11
+msgid "logout;shutdown;reboot;settings;theme;"
+msgstr "logout;shutdown;reboot;settings;theme;kijelentkezés;leállítás;újraindítás;beállítások;téma;"

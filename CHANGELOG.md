@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026.10.31
+
+### What Changed
+- **ArchLinux Logout and ArchLinux BetterLockScreen speak 13 languages**: Dutch, German, Spanish, French, Portuguese
+  (Brazil), Russian, Hungarian, Italian, Turkish, Polish, Japanese, Chinese (simplified) and Romanian, besides
+  English. Both follow the system language (Portugal reads Brazilian Portuguese, Taiwan/Hong Kong simplified Chinese).
+- **Language dropdown in the header, top right** (next to Support and Quit) in the logout settings window and in
+  BetterLockScreen, with **Restart now**. The logout screen's buttons follow the chosen language; their keyboard
+  shortcuts stay the same in every language. The menu entries are translated too.
+
+### Technical Details
+- New `alo_i18n.py` and `abl_i18n.py`, the shared Kiro i18n module, one gettext domain per app (`archlinux-logout`,
+  `archlinux-betterlockscreen`), catalogs in `usr/share/locale`, the choice in `~/.config/<app>/prefs.json` (never in
+  `archlinux-logout.conf`), test pins `ALO_LANGUAGE` / `ABL_LANGUAGE`, sibling fallback pt→pt_BR, zh→zh_CN.
+- `po/archlinux-logout/` (52 strings) and `po/archlinux-betterlockscreen/` (39 strings): template, 13 `.po` files,
+  `make-mo.sh` each (also writes that app's menu entry from its `.desktop.in`); `.codespellrc`.
+- Code and drafts by GitHub Copilot (GPT-6 Luna) from the Kiro-HQ brief; review by a second AI (Luna; GPT-6.1 Terra
+  for Russian, Hungarian, Turkish, Polish, Japanese, Chinese and Romanian): 92 findings, 88 taken. Settings window and
+  BetterLockScreen checked off-screen in German and Russian; the logout overlay itself is not started in tests (its
+  power keys are live), so check its button labels on a test box.
+
+### Files Modified
+- `usr/share/archlinux-logout/alo_i18n.py` (new), `GUI.py`, `Functions.py`, `archlinux-logout.py`
+- `usr/share/archlinux-betterlockscreen/abl_i18n.py` (new), `GUI.py`, `Support.py`, `archlinux-betterlockscreen.py`
+- `po/` (new), `usr/share/locale/*/LC_MESSAGES/*.mo` (new), `usr/share/applications/archlinux-logout-settings.desktop`,
+  `usr/share/applications/archlinux-betterlockscreen.desktop` (now generated), `.codespellrc` (new)
+- `README.md`, `CLAUDE.md`, `CHANGELOG.md`
+
 ## 2026.10.26
 
 ### What Changed

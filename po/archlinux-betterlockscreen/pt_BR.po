@@ -1,0 +1,186 @@
+# Portuguese translations for archlinux-betterlockscreen archlinux-betterlockscreen.
+# Copyright (C) 2026 THE archlinux-betterlockscreen'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the archlinux-betterlockscreen archlinux-betterlockscreen.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: archlinux-betterlockscreen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"PO-Revision-Date: 2026-10-31 16:39+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:14
+#, python-brace-format
+msgid "System ({language})"
+msgstr "Sistema ({language})"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:17
+msgid "Language"
+msgstr "Idioma"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:22
+msgid "Restart now"
+msgstr "Reiniciar agora"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:28
+msgid "Saved. The app shows the new language when it starts again."
+msgstr "Salvo. O app mostrará o novo idioma na próxima vez que for iniciado."
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:62
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:46
+msgid "ArchLinux BetterLockScreen"
+msgstr "ArchLinux BetterLockScreen"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:67
+#, python-brace-format
+msgid "betterlockscreen v{version}"
+msgstr "betterlockscreen v{version}"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:68
+#, python-brace-format
+msgid "betterlockscreen {version}"
+msgstr "betterlockscreen {version}"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:74
+msgid "♥ Support"
+msgstr "♥ Apoiar"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:75
+msgid "Support development"
+msgstr "Apoie o desenvolvimento"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:79
+msgid "Quit"
+msgstr "Sair"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:133
+msgid "Enter Location"
+msgstr "Informe o local"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:136
+msgid "Load"
+msgstr "Carregar"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:137
+msgid "Default"
+msgstr "Padrão"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:147
+msgid "Known wallpaper folders - pick one to load it"
+msgstr "Pastas de papéis de parede conhecidas: escolha uma para carregar"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:170
+msgid "Search: "
+msgstr "Pesquisar: "
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:172
+msgid "Search"
+msgstr "Pesquisar"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:184
+msgid "To lock the screen: press Super + X, then K"
+msgstr "Para bloquear a tela: pressione Super + X e depois K"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:192
+msgid "Creating lockscreen images..."
+msgstr "Criando imagens da tela de bloqueio..."
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:195
+msgid "Apply Image"
+msgstr "Aplicar imagem"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:203
+#: usr/share/archlinux-betterlockscreen/Support.py:15
+msgid "Credits"
+msgstr "Créditos"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:226
+msgid "Blur intensity"
+msgstr "Intensidade do desfoque"
+
+#: usr/share/archlinux-betterlockscreen/Support.py:33
+msgid ""
+"Big thank you to our developers for their work on this project.\n"
+"<b>Brad Heffernan</b> is the driving force aka developer behind the "
+"Betterlockscreen GUI. With the help of <b>Erik Dubois</b> we were able to "
+"give our users an easy and efficient tool."
+msgstr "Agradecemos muito aos nossos desenvolvedores pelo trabalho neste projeto.\n<b>Brad Heffernan</b> é a força motriz e o desenvolvedor da interface do Betterlockscreen. Com a ajuda de <b>Erik Dubois</b>, conseguimos oferecer uma ferramenta simples e eficiente."
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:132
+msgid "You need to select an image first"
+msgstr "Você precisa selecionar uma imagem primeiro"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:136
+msgid "creating lockscreen images....wait for the message at the top"
+msgstr "Criando imagens da tela de bloqueio... aguarde a mensagem no topo"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+msgid "Lockscreen set successfully"
+msgstr "Tela de bloqueio configurada"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:155
+msgid "ERROR: is betterlockscreen installed?"
+msgstr "ERRO: o betterlockscreen está instalado?"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:176
+msgid "Please choose a folder"
+msgstr "Escolha uma pasta"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:193
+msgid "That directory not found!"
+msgstr "Essa pasta não foi encontrada!"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
+msgid "Loading images..."
+msgstr "Carregando imagens..."
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:271
+msgid "Lock File Found"
+msgstr "Arquivo de bloqueio encontrado"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:273
+msgid ""
+"The lock file has been found. This indicates there is already an instance of "
+"ArchLinux Betterlockscreen GUI running.\n"
+"Click Yes to remove the lock file and try running again."
+msgstr "O arquivo de bloqueio foi encontrado. Isso indica que já existe uma instância do ArchLinux Betterlockscreen GUI em execução.\nClique em Sim para remover o arquivo e tentar novamente."
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
+msgid "No"
+msgstr "Não"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
+msgid "Yes"
+msgstr "Sim"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:298
+msgid "Application Running!"
+msgstr "Aplicativo em execução!"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:299
+msgid "You first need to close the existing application"
+msgstr "Você precisa fechar o aplicativo existente primeiro"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:2
+msgid "ArchLinux Betterlockscreen"
+msgstr "ArchLinux Betterlockscreen"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:3
+msgid "Betterlockscreen"
+msgstr "Betterlockscreen"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:5
+msgid "Change the image for the lockscreen"
+msgstr "Alterar a imagem da tela de bloqueio"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:11
+msgid "tool;twm;color;"
+msgstr "tool;twm;color;ferramenta;gerenciador de janelas;cor;"

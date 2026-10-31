@@ -1,0 +1,4 @@
+[codespell]
+# The generated menu entry and the .po catalogs carry every translation; codespell only knows English typos.
+# The English sources (the .py files and po/*.desktop.in) are still checked.
+skip = *.desktop,*.po,*.pot

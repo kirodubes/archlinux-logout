@@ -1,0 +1,191 @@
+# Chinese translations for archlinux-betterlockscreen archlinux-betterlockscreen.
+# Copyright (C) 2026 THE archlinux-betterlockscreen'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the archlinux-betterlockscreen archlinux-betterlockscreen.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: archlinux-betterlockscreen\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 16:47+0100\n"
+"PO-Revision-Date: 2026-10-31 16:39+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:14
+#, python-brace-format
+msgid "System ({language})"
+msgstr "系统（{language}）"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:17
+msgid "Language"
+msgstr "语言"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:22
+msgid "Restart now"
+msgstr "立即重启"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:28
+msgid "Saved. The app shows the new language when it starts again."
+msgstr "已保存。应用下次启动时将显示新语言。"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:62
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:46
+msgid "ArchLinux BetterLockScreen"
+msgstr "ArchLinux BetterLockScreen"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:67
+#, python-brace-format
+msgid "betterlockscreen v{version}"
+msgstr "betterlockscreen v{version}"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:68
+#, python-brace-format
+msgid "betterlockscreen {version}"
+msgstr "betterlockscreen {version}"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:74
+msgid "♥ Support"
+msgstr "♥ 支持"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:75
+msgid "Support development"
+msgstr "支持开发"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:79
+msgid "Quit"
+msgstr "退出"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:133
+msgid "Enter Location"
+msgstr "输入位置"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:136
+msgid "Load"
+msgstr "加载"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:137
+msgid "Default"
+msgstr "默认"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:147
+msgid "Known wallpaper folders - pick one to load it"
+msgstr "已知壁纸文件夹：选择一个以加载"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:170
+msgid "Search: "
+msgstr "搜索："
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:172
+msgid "Search"
+msgstr "搜索"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:184
+msgid "To lock the screen: press Super + X, then K"
+msgstr "锁定屏幕：按 Super + X，然后按 K"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:192
+msgid "Creating lockscreen images..."
+msgstr "正在创建锁屏图像…"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:195
+msgid "Apply Image"
+msgstr "应用图像"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:203
+#: usr/share/archlinux-betterlockscreen/Support.py:15
+msgid "Credits"
+msgstr "鸣谢"
+
+#: usr/share/archlinux-betterlockscreen/GUI.py:226
+msgid "Blur intensity"
+msgstr "模糊强度"
+
+#: usr/share/archlinux-betterlockscreen/Support.py:33
+msgid ""
+"Big thank you to our developers for their work on this project.\n"
+"<b>Brad Heffernan</b> is the driving force aka developer behind the "
+"Betterlockscreen GUI. With the help of <b>Erik Dubois</b> we were able to "
+"give our users an easy and efficient tool."
+msgstr ""
+"感谢开发者为此项目付出的努力。\n"
+"<b>Brad Heffernan</b> 是 Betterlockscreen 图形界面的主要推动者和开发者。在 "
+"<b>Erik Dubois</b> 的帮助下，我们为用户提供了简单高效的工具。"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:132
+msgid "You need to select an image first"
+msgstr "请先选择图像"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:136
+msgid "creating lockscreen images....wait for the message at the top"
+msgstr "正在创建锁屏图像……请等待顶部的提示"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+msgid "Lockscreen set successfully"
+msgstr "锁屏已设置"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:155
+msgid "ERROR: is betterlockscreen installed?"
+msgstr "错误：是否已安装 betterlockscreen？"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:176
+msgid "Please choose a folder"
+msgstr "请选择文件夹"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:193
+msgid "That directory not found!"
+msgstr "未找到该目录！"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
+msgid "Loading images..."
+msgstr "正在加载图像…"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:271
+msgid "Lock File Found"
+msgstr "发现锁定文件"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:273
+msgid ""
+"The lock file has been found. This indicates there is already an instance of "
+"ArchLinux Betterlockscreen GUI running.\n"
+"Click Yes to remove the lock file and try running again."
+msgstr ""
+"已找到锁定文件，这表示 ArchLinux Betterlockscreen GUI 已在运行。\n"
+"点击“是”删除锁定文件并重试。"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
+msgid "No"
+msgstr "否"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
+msgid "Yes"
+msgstr "是"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:298
+msgid "Application Running!"
+msgstr "应用正在运行！"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:299
+msgid "You first need to close the existing application"
+msgstr "请先关闭已运行的应用"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:2
+msgid "ArchLinux Betterlockscreen"
+msgstr "ArchLinux Betterlockscreen"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:3
+msgid "Betterlockscreen"
+msgstr "Betterlockscreen"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:5
+msgid "Change the image for the lockscreen"
+msgstr "更改锁屏图像"
+
+#: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:11
+msgid "tool;twm;color;"
+msgstr "tool;twm;color;工具;窗口管理器;颜色;"

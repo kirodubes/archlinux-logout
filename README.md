@@ -206,6 +206,13 @@ The application supports:
 - **Wayland Sessions**: Graceful fallback to primary monitor display
 - **Multiple Desktop Environments**: Includes logout commands for 50+ DEs and window managers (GNOME, KDE, Xfce, i3, Hyprland, and many more)
 
+## Languages
+
+ArchLinux Logout and ArchLinux BetterLockScreen follow your system language: English, Dutch, German, Spanish,
+French, Portuguese (Brazil), Russian, Hungarian, Italian, Turkish, Polish, Japanese, Chinese (simplified) and
+Romanian. Pick another one in the language dropdown at the top right of the settings window (or of BetterLockScreen)
+and press **Restart now**. The keyboard shortcuts stay the same in every language.
+
 ## Installation
 
 ### From Package Manager

@@ -1,0 +1,302 @@
+# Dutch translations for archlinux-logout archlinux-logout.
+# Copyright (C) 2026 THE archlinux-logout'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the archlinux-logout archlinux-logout.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: archlinux-logout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"PO-Revision-Date: 2026-10-31 16:39+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: usr/share/archlinux-logout/Functions.py:489
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Shut down"
+msgstr "Afsluiten"
+
+#: usr/share/archlinux-logout/Functions.py:497
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Restart"
+msgstr "Herstarten"
+
+#: usr/share/archlinux-logout/Functions.py:505
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Suspend"
+msgstr "Slaapstand"
+
+#: usr/share/archlinux-logout/Functions.py:513
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Lock"
+msgstr "Vergrendelen"
+
+#: usr/share/archlinux-logout/Functions.py:521
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Log out"
+msgstr "Afmelden"
+
+#: usr/share/archlinux-logout/Functions.py:529
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: usr/share/archlinux-logout/Functions.py:539
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Hibernate"
+msgstr "Sluimeren"
+
+#: usr/share/archlinux-logout/GUI.py:14
+#, python-brace-format
+msgid "System ({language})"
+msgstr "Systeem ({language})"
+
+#: usr/share/archlinux-logout/GUI.py:17
+msgid "Language"
+msgstr "Taal"
+
+#: usr/share/archlinux-logout/GUI.py:22
+msgid "Restart now"
+msgstr "Nu herstarten"
+
+#: usr/share/archlinux-logout/GUI.py:28
+msgid "Saved. The app shows the new language when it starts again."
+msgstr "Bewaard. De app toont de nieuwe taal bij de volgende start."
+
+#: usr/share/archlinux-logout/GUI.py:45
+msgid "best value — almost all goes to the project"
+msgstr "beste keuze: bijna alles gaat naar het project"
+
+#: usr/share/archlinux-logout/GUI.py:46
+msgid "buy a coffee — one-off tip"
+msgstr "trakteer op een koffie: een eenmalige fooi"
+
+#: usr/share/archlinux-logout/GUI.py:47
+msgid "membership tiers + perks"
+msgstr "lidmaatschapsniveaus met extra's"
+
+#: usr/share/archlinux-logout/GUI.py:48
+msgid "join on YouTube"
+msgstr "word lid op YouTube"
+
+#: usr/share/archlinux-logout/GUI.py:49
+msgid "direct one-off"
+msgstr "rechtstreeks, eenmalig"
+
+#: usr/share/archlinux-logout/GUI.py:58
+msgid "Support Kiro"
+msgstr "Steun Kiro"
+
+#: usr/share/archlinux-logout/GUI.py:66
+msgid "<b>Support Kiro</b>"
+msgstr "<b>Steun Kiro</b>"
+
+#: usr/share/archlinux-logout/GUI.py:74
+msgid ""
+"Kiro and its tools are built by one person, for the community — and kept "
+"free. If ArchLinux Logout saves you time, a little support keeps the work "
+"going. Thank you for being here."
+msgstr "Kiro en de bijbehorende programma's worden door één persoon voor de gemeenschap gebouwd en blijven gratis. Als ArchLinux Logout je tijd bespaart, helpt een kleine bijdrage het werk voort te zetten. Bedankt dat je er bent."
+
+#: usr/share/archlinux-logout/GUI.py:94
+msgid "Close"
+msgstr "Sluiten"
+
+#: usr/share/archlinux-logout/GUI.py:127
+msgid "<b>Opacity:</b>"
+msgstr "<b>Dekking:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:132
+msgid "<b>Icon size:</b>"
+msgstr "<b>Pictogramgrootte:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:137
+msgid "<b>Theme:</b>"
+msgstr "<b>Thema:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:142
+msgid "<b>Font size:</b>"
+msgstr "<b>Lettergrootte:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:194
+msgid "Save Settings"
+msgstr "Instellingen opslaan"
+
+#: usr/share/archlinux-logout/GUI.py:211
+msgid "<b>Show text:</b>"
+msgstr "<b>Tekst tonen:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:244
+msgid "<b>Buttons:</b>"
+msgstr "<b>Knoppen:</b>"
+
+#: usr/share/archlinux-logout/GUI.py:275
+#: usr/share/archlinux-logout/archlinux-logout.py:144
+#: po/archlinux-logout/archlinux-logout.desktop.in:2
+#: po/archlinux-logout/archlinux-logout.desktop.in:3
+msgid "ArchLinux Logout Settings"
+msgstr "ArchLinux Logout-instellingen"
+
+#: usr/share/archlinux-logout/GUI.py:279
+msgid "♥ Support"
+msgstr "♥ Steun"
+
+#: usr/share/archlinux-logout/GUI.py:280
+msgid "Support Kiro's development"
+msgstr "Steun de ontwikkeling van Kiro"
+
+#: usr/share/archlinux-logout/GUI.py:284
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: usr/share/archlinux-logout/GUI.py:302
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: usr/share/archlinux-logout/GUI.py:304
+msgid "Buttons"
+msgstr "Knoppen"
+
+#: usr/share/archlinux-logout/GUI.py:308
+msgid "Theme"
+msgstr "Thema"
+
+#: usr/share/archlinux-logout/GUI.py:316
+msgid ""
+"<b>What is this?</b>\n"
+"ArchLinux Logout is the power screen shown when you log out — the row of "
+"buttons for Shutdown, Restart, Suspend, Hibernate, Lock, Logout and Cancel.\n"
+"\n"
+"<b>What you can change here</b>\n"
+"• <b>Opacity</b> — how see-through the logout screen's background is\n"
+"• <b>Icon size</b> — how big the power-button icons are\n"
+"• <b>Font size</b> — the size of the button labels\n"
+"• <b>Show text</b> — whether labels appear under the icons\n"
+"• <b>Buttons</b> — which power actions are offered (tick the ones you want)\n"
+"• <b>Theme</b> — the visual style and icon set of the logout screen\n"
+"\n"
+"Click <b>Save Settings</b> to apply. Changes take effect the next time the "
+"logout screen opens."
+msgstr ""
+"<b>Wat is dit?</b>\n"
+"ArchLinux Logout is het scherm met energieacties dat je ziet wanneer je "
+"uitlogt, met knoppen voor Afsluiten, Herstarten, Slaapstand, Sluimeren, "
+"Vergrendelen, Afmelden en Annuleren.\n"
+"\n"
+"<b>Wat je hier kunt aanpassen</b>\n"
+"• <b>Dekking</b>: hoe doorzichtig de achtergrond van het uitlogscherm is\n"
+"• <b>Pictogramgrootte</b>: hoe groot de actiepictogrammen zijn\n"
+"• <b>Lettergrootte</b>: de grootte van de knoplabels\n"
+"• <b>Tekst tonen</b>: of labels onder de pictogrammen staan\n"
+"• <b>Knoppen</b>: welke acties beschikbaar zijn. Vink de gewenste aan\n"
+"• <b>Thema</b>: de stijl en pictogrammenset van het uitlogscherm\n"
+"\n"
+"Klik op <b>Instellingen opslaan</b> om de wijzigingen toe te passen. "
+"Wijzigingen gelden wanneer je het uitlogscherm de volgende keer opent."
+
+#: usr/share/archlinux-logout/GUI.py:461
+#: usr/share/archlinux-logout/archlinux-logout.py:427
+#: usr/share/archlinux-logout/archlinux-logout.py:538
+#, python-brace-format
+msgid "Shut down ({key})"
+msgstr "Afsluiten ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:462
+#: usr/share/archlinux-logout/archlinux-logout.py:440
+#: usr/share/archlinux-logout/archlinux-logout.py:551
+#, python-brace-format
+msgid "Restart ({key})"
+msgstr "Herstarten ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:463
+#: usr/share/archlinux-logout/archlinux-logout.py:453
+#: usr/share/archlinux-logout/archlinux-logout.py:564
+#, python-brace-format
+msgid "Suspend ({key})"
+msgstr "Pauzestand ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:464
+#: usr/share/archlinux-logout/archlinux-logout.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:577
+#, python-brace-format
+msgid "Lock ({key})"
+msgstr "Vergrendelen ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:465
+#: usr/share/archlinux-logout/archlinux-logout.py:479
+#: usr/share/archlinux-logout/archlinux-logout.py:590
+#, python-brace-format
+msgid "Log out ({key})"
+msgstr "Afmelden ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:492
+#: usr/share/archlinux-logout/archlinux-logout.py:603
+#, python-brace-format
+msgid "Cancel ({key})"
+msgstr "Annuleren ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:467
+#: usr/share/archlinux-logout/archlinux-logout.py:505
+#: usr/share/archlinux-logout/archlinux-logout.py:616
+#, python-brace-format
+msgid "Hibernate ({key})"
+msgstr "Sluimeren ({key})"
+
+#: usr/share/archlinux-logout/GUI.py:565
+msgid ""
+"<span size=\"large\">You can change the lockscreen wallpaper\n"
+"with <b>Archlinux BetterLockScreen</b></span>"
+msgstr ""
+"<span size=\"large\">Je kunt de achtergrond van het vergrendelscherm "
+"wijzigen\n"
+"met <b>Archlinux BetterLockScreen</b></span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:91
+msgid "ArchLinux Logout"
+msgstr "ArchLinux Logout"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:177
+msgid "Open BetterLockScreen"
+msgstr "BetterLockScreen openen"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:178
+msgid "Configure the lock screen wallpaper and blur"
+msgstr "Stel de achtergrond en vervaging van het vergrendelscherm in"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:673
+msgid "No logout command could be detected for this desktop session."
+msgstr "Er is geen afmeldopdracht gevonden voor deze desktopsessie."
+
+#: usr/share/archlinux-logout/archlinux-logout.py:674
+msgid "Logout command not found"
+msgstr "Afmeldopdracht niet gevonden"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:708
+msgid ""
+"<span size=\"x-large\"><b>Caching lockscreen images for a faster locking "
+"next time</b></span>"
+msgstr ""
+"<span size=\"x-large\"><b>Afbeeldingen van het vergrendelscherm worden in de "
+"cache opgeslagen, zodat het vergrendelen de volgende keer sneller gaat</b></"
+"span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:715
+msgid ""
+"<span size=\"x-large\"><b>Choose a wallpaper with archlinux-"
+"betterlockscreen</b></span>"
+msgstr "<span size=\"x-large\"><b>Kies een achtergrond met archlinux-betterlockscreen</b></span>"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:5
+msgid "Configure the ArchLinux Logout screen — theme, icons, buttons, and text"
+msgstr "Configureer het ArchLinux Logout-scherm: thema, pictogrammen, knoppen en tekst"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:11
+msgid "logout;shutdown;reboot;settings;theme;"
+msgstr "logout;shutdown;reboot;settings;theme;afmelden;afsluiten;herstarten;instellingen;thema;"

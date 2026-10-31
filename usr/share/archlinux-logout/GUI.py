@@ -2,15 +2,51 @@
 #        Authors Brad Heffernan and Erik Dubois
 # =====================================================
 
+import os
+import sys
+
+import alo_i18n as i18n
+from alo_i18n import N_, _
+
+
+def _language_controls(self, Gtk):
+    codes = [None, *i18n.available()]
+    labels = [_("System ({language})").format(language=i18n.name(i18n.SYSTEM))]
+    labels.extend(i18n.name(code) for code in codes[1:])
+    dropdown = Gtk.DropDown.new_from_strings(labels)
+    dropdown.set_tooltip_text(_("Language"))
+    dropdown.set_selected(codes.index(i18n.chosen()))
+
+    note = Gtk.Label(label="", xalign=0)
+    note.set_visible(False)
+    restart = Gtk.Button(label=_("Restart now"), visible=False)
+
+    def on_language_changed(_dropdown, _pspec):
+        code = codes[dropdown.get_selected()]
+        i18n.save_choice(code)
+        changed = (code or i18n.SYSTEM) != (i18n.ACTIVE or i18n.SYSTEM)
+        note.set_text(_("Saved. The app shows the new language when it starts again.") if changed else "")
+        note.set_visible(changed)
+        restart.set_visible(changed)
+
+    def on_restart(_widget):
+        argv = [sys.executable, os.path.abspath(sys.argv[0]), *sys.argv[1:]]
+        i18n.restore_environment()
+        os.execv(sys.executable, argv)
+
+    dropdown.connect("notify::selected", on_language_changed)
+    restart.connect("clicked", on_restart)
+    return dropdown, note, restart
+
 
 # Funding channels — GitHub Sponsors first (~100% payout). Keep in sync with
 # kiro-website .github/FUNDING.yml if those change.
 _FUNDING = [
-    ("GitHub Sponsors", "https://github.com/sponsors/erikdubois", "best value — almost all goes to the project"),
-    ("Ko-fi", "https://ko-fi.com/erikdubois", "buy a coffee — one-off tip"),
-    ("Patreon", "https://www.patreon.com/kiroproject", "membership tiers + perks"),
-    ("YouTube membership", "https://www.youtube.com/@ErikDubois/join", "join on YouTube"),
-    ("PayPal", "https://www.paypal.me/erikdubois", "direct one-off"),
+    ("GitHub Sponsors", "https://github.com/sponsors/erikdubois", _("best value — almost all goes to the project")),
+    ("Ko-fi", "https://ko-fi.com/erikdubois", _("buy a coffee — one-off tip")),
+    ("Patreon", "https://www.patreon.com/kiroproject", _("membership tiers + perks")),
+    ("YouTube membership", "https://www.youtube.com/@ErikDubois/join", _("join on YouTube")),
+    ("PayPal", "https://www.paypal.me/erikdubois", _("direct one-off")),
 ]
 
 
@@ -19,7 +55,7 @@ def _open_url(Gtk, parent, url):
 
 
 def _show_support_dialog(Gtk, parent):
-    dlg = Gtk.Window(title="Support Kiro", transient_for=parent, modal=True)
+    dlg = Gtk.Window(title=_("Support Kiro"), transient_for=parent, modal=True)
     dlg.set_default_size(440, -1)
     box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
     for side in ("start", "end", "top", "bottom"):
@@ -27,7 +63,7 @@ def _show_support_dialog(Gtk, parent):
 
     heading = Gtk.Label()
     heading.set_xalign(0.0)
-    heading.set_markup("<b>Support Kiro</b>")
+    heading.set_markup(_("<b>Support Kiro</b>"))
     box.append(heading)
 
     intro = Gtk.Label()
@@ -35,9 +71,9 @@ def _show_support_dialog(Gtk, parent):
     intro.set_wrap(True)
     intro.set_max_width_chars(52)
     intro.set_label(
-        "Kiro and its tools are built by one person, for the community — and kept free. "
-        "If ArchLinux Logout saves you time, a little support keeps the work going. "
-        "Thank you for being here."
+        _("Kiro and its tools are built by one person, for the community — and kept free. "
+          "If ArchLinux Logout saves you time, a little support keeps the work going. "
+          "Thank you for being here.")
     )
     box.append(intro)
 
@@ -55,7 +91,7 @@ def _show_support_dialog(Gtk, parent):
         btn.connect("clicked", lambda _w, u=url: _open_url(Gtk, dlg, u))
         box.append(btn)
 
-    close = Gtk.Button(label="Close")
+    close = Gtk.Button(label=_("Close"))
     close.set_halign(Gtk.Align.END)
     close.connect("clicked", lambda _w: dlg.close())
     box.append(close)
@@ -88,22 +124,22 @@ def SettingsPanel(self, Gtk, fn):
     vbox.set_margin_bottom(10)
 
     lbl_opacity = Gtk.Label()
-    lbl_opacity.set_markup("<b>Opacity:</b>")
+    lbl_opacity.set_markup(_("<b>Opacity:</b>"))
     lbl_opacity.set_halign(Gtk.Align.START)
     lbl_opacity.set_valign(Gtk.Align.END)
 
     lbl_icon_size = Gtk.Label()
-    lbl_icon_size.set_markup("<b>Icon size:</b>")
+    lbl_icon_size.set_markup(_("<b>Icon size:</b>"))
     lbl_icon_size.set_halign(Gtk.Align.START)
     lbl_icon_size.set_valign(Gtk.Align.END)
 
     lbl_theme = Gtk.Label()
-    lbl_theme.set_markup("<b>Theme:</b>")
+    lbl_theme.set_markup(_("<b>Theme:</b>"))
     lbl_theme.set_halign(Gtk.Align.START)
     lbl_theme.set_valign(Gtk.Align.CENTER)
 
     lbl_font_size = Gtk.Label()
-    lbl_font_size.set_markup("<b>Font size:</b>")
+    lbl_font_size.set_markup(_("<b>Font size:</b>"))
     lbl_font_size.set_halign(Gtk.Align.START)
     lbl_font_size.set_valign(Gtk.Align.END)
 
@@ -155,7 +191,7 @@ def SettingsPanel(self, Gtk, fn):
     active = lists.index(self.theme) if self.theme in lists else 0
     self.themes.set_selected(active)
 
-    btn_save_settings = Gtk.Button(label="Save Settings")
+    btn_save_settings = Gtk.Button(label=_("Save Settings"))
     btn_save_settings.connect("clicked", self.on_save_clicked)
     self.btn_save_settings = btn_save_settings
 
@@ -172,7 +208,7 @@ def SettingsPanel(self, Gtk, fn):
     hbox_font_size.append(self.fonts)
 
     lbl_show_text = Gtk.Label()
-    lbl_show_text.set_markup("<b>Show text:</b>")
+    lbl_show_text.set_markup(_("<b>Show text:</b>"))
     lbl_show_text.set_halign(Gtk.Align.START)
     lbl_show_text.set_valign(Gtk.Align.CENTER)
 
@@ -186,8 +222,8 @@ def SettingsPanel(self, Gtk, fn):
     # --- Button visibility checkboxes ---
     _all_buttons = ["cancel", "shutdown", "restart", "suspend", "hibernate", "lock", "logout"]
     _btn_display = {
-        "cancel": "Cancel", "shutdown": "Shutdown", "restart": "Restart",
-        "suspend": "Suspend", "hibernate": "Hibernate", "lock": "Lock", "logout": "Logout",
+        "cancel": N_("Cancel"), "shutdown": N_("Shut down"), "restart": N_("Restart"),
+        "suspend": N_("Suspend"), "hibernate": N_("Hibernate"), "lock": N_("Lock"), "logout": N_("Log out"),
     }
 
     buttons_grid = Gtk.Grid()
@@ -195,7 +231,7 @@ def SettingsPanel(self, Gtk, fn):
     buttons_grid.set_row_spacing(4)
 
     for i, btn_name in enumerate(_all_buttons):
-        chk = Gtk.CheckButton(label=_btn_display[btn_name])
+        chk = Gtk.CheckButton(label=_(_btn_display[btn_name]))
         chk.set_active(btn_name in self.buttons)
         setattr(self, f"chk_btn_{btn_name}", chk)
         buttons_grid.attach(chk, i % 2, i // 2, 1, 1)
@@ -205,7 +241,7 @@ def SettingsPanel(self, Gtk, fn):
     if not settings_only:
         # --- Overlay popover: compact flat grid (Save lives inside) ---
         lbl_buttons_section = Gtk.Label()
-        lbl_buttons_section.set_markup("<b>Buttons:</b>")
+        lbl_buttons_section.set_markup(_("<b>Buttons:</b>"))
         lbl_buttons_section.set_halign(Gtk.Align.START)
         lbl_buttons_section.set_valign(Gtk.Align.CENTER)
 
@@ -236,22 +272,26 @@ def SettingsPanel(self, Gtk, fn):
     hbox_header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
     hbox_header.set_margin_bottom(8)
 
-    lbl_app_title = Gtk.Label(label="ArchLinux Logout Settings", xalign=0)
+    lbl_app_title = Gtk.Label(label=_("ArchLinux Logout Settings"), xalign=0)
     lbl_app_title.set_name("title")
     lbl_app_title.set_hexpand(True)
 
-    btn_support = Gtk.Button(label="♥ Support")
-    btn_support.set_tooltip_text("Support Kiro's development")
+    btn_support = Gtk.Button(label=_("♥ Support"))
+    btn_support.set_tooltip_text(_("Support Kiro's development"))
     btn_support.add_css_class("support-button")
     btn_support.connect("clicked", lambda _w: _show_support_dialog(Gtk, self))
 
-    btn_quit = Gtk.Button(label="Quit")
+    btn_quit = Gtk.Button(label=_("Quit"))
     btn_quit.connect("clicked", self.on_exit_clicked)
 
+    language_dropdown, language_note, btn_restart = _language_controls(self, Gtk)
     hbox_header.append(lbl_app_title)
+    hbox_header.append(language_dropdown)
+    hbox_header.append(btn_restart)
     hbox_header.append(btn_support)
     hbox_header.append(btn_quit)
     vbox.append(hbox_header)
+    vbox.append(language_note)
     vbox.append(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
 
     appearance = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -259,13 +299,13 @@ def SettingsPanel(self, Gtk, fn):
     appearance.append(hbox_icon_size)
     appearance.append(hbox_font_size)
     appearance.append(hbox_show_text)
-    vbox.append(_settings_card(Gtk, "Appearance", appearance))
+    vbox.append(_settings_card(Gtk, _("Appearance"), appearance))
 
-    vbox.append(_settings_card(Gtk, "Buttons", buttons_grid))
+    vbox.append(_settings_card(Gtk, _("Buttons"), buttons_grid))
 
     theme_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     theme_box.append(self.themes)
-    vbox.append(_settings_card(Gtk, "Theme", theme_box))
+    vbox.append(_settings_card(Gtk, _("Theme"), theme_box))
 
     lbl_about = Gtk.Label()
     lbl_about.set_wrap(True)
@@ -273,18 +313,18 @@ def SettingsPanel(self, Gtk, fn):
     lbl_about.set_margin_top(4)
     lbl_about.add_css_class("info-label")
     lbl_about.set_markup(
-        "<b>What is this?</b>\n"
-        "ArchLinux Logout is the power screen shown when you log out — the row of buttons "
-        "for Shutdown, Restart, Suspend, Hibernate, Lock, Logout and Cancel.\n\n"
-        "<b>What you can change here</b>\n"
-        "• <b>Opacity</b> — how see-through the logout screen's background is\n"
-        "• <b>Icon size</b> — how big the power-button icons are\n"
-        "• <b>Font size</b> — the size of the button labels\n"
-        "• <b>Show text</b> — whether labels appear under the icons\n"
-        "• <b>Buttons</b> — which power actions are offered (tick the ones you want)\n"
-        "• <b>Theme</b> — the visual style and icon set of the logout screen\n\n"
-        "Click <b>Save Settings</b> to apply. Changes take effect the next time the "
-        "logout screen opens."
+        _("<b>What is this?</b>\n"
+          "ArchLinux Logout is the power screen shown when you log out — the row of buttons "
+          "for Shutdown, Restart, Suspend, Hibernate, Lock, Logout and Cancel.\n\n"
+          "<b>What you can change here</b>\n"
+          "• <b>Opacity</b> — how see-through the logout screen's background is\n"
+          "• <b>Icon size</b> — how big the power-button icons are\n"
+          "• <b>Font size</b> — the size of the button labels\n"
+          "• <b>Show text</b> — whether labels appear under the icons\n"
+          "• <b>Buttons</b> — which power actions are offered (tick the ones you want)\n"
+          "• <b>Theme</b> — the visual style and icon set of the logout screen\n\n"
+          "Click <b>Save Settings</b> to apply. Changes take effect the next time the "
+          "logout screen opens.")
     )
     vbox.append(lbl_about)
 
@@ -418,13 +458,13 @@ def GUI(self, Gtk, GdkPixbuf, working_dir, os, Gdk, fn):
 
     # Map button names to (card, image_attr, label_attr, label_text, svg_name)
     button_defs = {
-        "shutdown": (self.Esh,  "imagesh",  "lbl1", f'Shutdown ({self.binds["shutdown"]})', "shutdown"),
-        "restart":  (self.Er,   "imager",   "lbl2", f'Reboot ({self.binds["restart"]})',    "restart"),
-        "suspend":  (self.Es,   "images",   "lbl3", f'Suspend ({self.binds["suspend"]})',   "suspend"),
-        "lock":     (self.Elk,  "imagelk",  "lbl4", f'Lock ({self.binds["lock"]})',         "lock"),
-        "logout":   (self.El,   "imagelo",  "lbl5", f'Logout ({self.binds["logout"]})',     "logout"),
-        "cancel":   (self.Ec,   "imagec",   "lbl6", f'Cancel ({self.binds["cancel"]})',     "cancel"),
-        "hibernate":(self.Eh,   "imageh",   "lbl7", f'Hibernate ({self.binds["hibernate"]})', "hibernate"),
+        "shutdown": (self.Esh,  "imagesh",  "lbl1", _("Shut down ({key})").format(key=self.binds["shutdown"]), "shutdown"),
+        "restart":  (self.Er,   "imager",   "lbl2", _("Restart ({key})").format(key=self.binds["restart"]), "restart"),
+        "suspend":  (self.Es,   "images",   "lbl3", _("Suspend ({key})").format(key=self.binds["suspend"]), "suspend"),
+        "lock":     (self.Elk,  "imagelk",  "lbl4", _("Lock ({key})").format(key=self.binds["lock"]), "lock"),
+        "logout":   (self.El,   "imagelo",  "lbl5", _("Log out ({key})").format(key=self.binds["logout"]), "logout"),
+        "cancel":   (self.Ec,   "imagec",   "lbl6", _("Cancel ({key})").format(key=self.binds["cancel"]), "cancel"),
+        "hibernate":(self.Eh,   "imageh",   "lbl7", _("Hibernate ({key})").format(key=self.binds["hibernate"]), "hibernate"),
     }
 
     for button in self.buttons:
@@ -522,7 +562,7 @@ def GUI(self, Gtk, GdkPixbuf, working_dir, os, Gdk, fn):
 
     plbl = Gtk.Label()
     plbl.set_markup(
-        '<span size="large">You can change the lockscreen wallpaper\nwith <b>Archlinux BetterLockScreen</b></span>'
+        _('<span size="large">You can change the lockscreen wallpaper\nwith <b>Archlinux BetterLockScreen</b></span>')
     )
     plbl.set_halign(Gtk.Align.END)
     hbox8.append(plbl)

@@ -1,0 +1,301 @@
+# Chinese translations for archlinux-logout archlinux-logout.
+# Copyright (C) 2026 THE archlinux-logout'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the archlinux-logout archlinux-logout.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: archlinux-logout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 16:47+0100\n"
+"PO-Revision-Date: 2026-10-31 16:39+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: usr/share/archlinux-logout/Functions.py:489
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Shut down"
+msgstr "关机"
+
+#: usr/share/archlinux-logout/Functions.py:497
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Restart"
+msgstr "重启"
+
+#: usr/share/archlinux-logout/Functions.py:505
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Suspend"
+msgstr "挂起"
+
+#: usr/share/archlinux-logout/Functions.py:513
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Lock"
+msgstr "锁定"
+
+#: usr/share/archlinux-logout/Functions.py:521
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Log out"
+msgstr "注销"
+
+#: usr/share/archlinux-logout/Functions.py:529
+#: usr/share/archlinux-logout/GUI.py:225
+msgid "Cancel"
+msgstr "取消"
+
+#: usr/share/archlinux-logout/Functions.py:539
+#: usr/share/archlinux-logout/GUI.py:226
+msgid "Hibernate"
+msgstr "休眠"
+
+#: usr/share/archlinux-logout/GUI.py:14
+#, python-brace-format
+msgid "System ({language})"
+msgstr "系统（{language}）"
+
+#: usr/share/archlinux-logout/GUI.py:17
+msgid "Language"
+msgstr "语言"
+
+#: usr/share/archlinux-logout/GUI.py:22
+msgid "Restart now"
+msgstr "立即重启"
+
+#: usr/share/archlinux-logout/GUI.py:28
+msgid "Saved. The app shows the new language when it starts again."
+msgstr "已保存。应用下次启动时将显示新语言。"
+
+#: usr/share/archlinux-logout/GUI.py:45
+msgid "best value — almost all goes to the project"
+msgstr "最划算：几乎全部用于项目"
+
+#: usr/share/archlinux-logout/GUI.py:46
+msgid "buy a coffee — one-off tip"
+msgstr "请喝杯咖啡：一次性打赏"
+
+#: usr/share/archlinux-logout/GUI.py:47
+msgid "membership tiers + perks"
+msgstr "会员等级和福利"
+
+#: usr/share/archlinux-logout/GUI.py:48
+msgid "join on YouTube"
+msgstr "在 YouTube 上加入会员"
+
+#: usr/share/archlinux-logout/GUI.py:49
+msgid "direct one-off"
+msgstr "直接一次性捐赠"
+
+#: usr/share/archlinux-logout/GUI.py:58
+msgid "Support Kiro"
+msgstr "支持 Kiro"
+
+#: usr/share/archlinux-logout/GUI.py:66
+msgid "<b>Support Kiro</b>"
+msgstr "<b>支持 Kiro</b>"
+
+#: usr/share/archlinux-logout/GUI.py:74
+msgid ""
+"Kiro and its tools are built by one person, for the community — and kept "
+"free. If ArchLinux Logout saves you time, a little support keeps the work "
+"going. Thank you for being here."
+msgstr ""
+"Kiro 及其工具由一人为社区开发并免费提供。如果 ArchLinux Logout 为你节省了时"
+"间，一点支持就能帮助项目继续发展。感谢你的使用。"
+
+#: usr/share/archlinux-logout/GUI.py:94
+msgid "Close"
+msgstr "关闭"
+
+#: usr/share/archlinux-logout/GUI.py:127
+msgid "<b>Opacity:</b>"
+msgstr "<b>不透明度：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:132
+msgid "<b>Icon size:</b>"
+msgstr "<b>图标大小：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:137
+msgid "<b>Theme:</b>"
+msgstr "<b>主题：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:142
+msgid "<b>Font size:</b>"
+msgstr "<b>字体大小：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:194
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: usr/share/archlinux-logout/GUI.py:211
+msgid "<b>Show text:</b>"
+msgstr "<b>显示文字：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:244
+msgid "<b>Buttons:</b>"
+msgstr "<b>按钮：</b>"
+
+#: usr/share/archlinux-logout/GUI.py:275
+#: usr/share/archlinux-logout/archlinux-logout.py:144
+#: po/archlinux-logout/archlinux-logout.desktop.in:2
+#: po/archlinux-logout/archlinux-logout.desktop.in:3
+msgid "ArchLinux Logout Settings"
+msgstr "ArchLinux Logout 设置"
+
+#: usr/share/archlinux-logout/GUI.py:279
+msgid "♥ Support"
+msgstr "♥ 支持"
+
+#: usr/share/archlinux-logout/GUI.py:280
+msgid "Support Kiro's development"
+msgstr "支持 Kiro 的开发"
+
+#: usr/share/archlinux-logout/GUI.py:284
+msgid "Quit"
+msgstr "退出"
+
+#: usr/share/archlinux-logout/GUI.py:302
+msgid "Appearance"
+msgstr "外观"
+
+#: usr/share/archlinux-logout/GUI.py:304
+msgid "Buttons"
+msgstr "按钮"
+
+#: usr/share/archlinux-logout/GUI.py:308
+msgid "Theme"
+msgstr "主题"
+
+#: usr/share/archlinux-logout/GUI.py:316
+msgid ""
+"<b>What is this?</b>\n"
+"ArchLinux Logout is the power screen shown when you log out — the row of "
+"buttons for Shutdown, Restart, Suspend, Hibernate, Lock, Logout and Cancel.\n"
+"\n"
+"<b>What you can change here</b>\n"
+"• <b>Opacity</b> — how see-through the logout screen's background is\n"
+"• <b>Icon size</b> — how big the power-button icons are\n"
+"• <b>Font size</b> — the size of the button labels\n"
+"• <b>Show text</b> — whether labels appear under the icons\n"
+"• <b>Buttons</b> — which power actions are offered (tick the ones you want)\n"
+"• <b>Theme</b> — the visual style and icon set of the logout screen\n"
+"\n"
+"Click <b>Save Settings</b> to apply. Changes take effect the next time the "
+"logout screen opens."
+msgstr ""
+"<b>这是什么？</b>\n"
+"ArchLinux Logout 是注销时显示的电源操作界面，提供关机、重启、挂起、休眠、锁"
+"定、注销和取消按钮。\n"
+"\n"
+"<b>你可以在这里更改</b>\n"
+"• <b>不透明度</b>：背景的透明程度\n"
+"• <b>图标大小</b>：操作图标的大小\n"
+"• <b>字体大小</b>：按钮标签的大小\n"
+"• <b>显示文字</b>：是否在图标下显示标签\n"
+"• <b>按钮</b>：提供哪些操作。勾选需要的项目\n"
+"• <b>主题</b>：界面的样式和图标集\n"
+"\n"
+"点击<b>保存设置</b>以应用更改。更改会在下次打开界面时生效。"
+
+#: usr/share/archlinux-logout/GUI.py:461
+#: usr/share/archlinux-logout/archlinux-logout.py:427
+#: usr/share/archlinux-logout/archlinux-logout.py:538
+#, python-brace-format
+msgid "Shut down ({key})"
+msgstr "关机（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:462
+#: usr/share/archlinux-logout/archlinux-logout.py:440
+#: usr/share/archlinux-logout/archlinux-logout.py:551
+#, python-brace-format
+msgid "Restart ({key})"
+msgstr "重启（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:463
+#: usr/share/archlinux-logout/archlinux-logout.py:453
+#: usr/share/archlinux-logout/archlinux-logout.py:564
+#, python-brace-format
+msgid "Suspend ({key})"
+msgstr "挂起（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:464
+#: usr/share/archlinux-logout/archlinux-logout.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:577
+#, python-brace-format
+msgid "Lock ({key})"
+msgstr "锁定（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:465
+#: usr/share/archlinux-logout/archlinux-logout.py:479
+#: usr/share/archlinux-logout/archlinux-logout.py:590
+#, python-brace-format
+msgid "Log out ({key})"
+msgstr "注销（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:466
+#: usr/share/archlinux-logout/archlinux-logout.py:492
+#: usr/share/archlinux-logout/archlinux-logout.py:603
+#, python-brace-format
+msgid "Cancel ({key})"
+msgstr "取消（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:467
+#: usr/share/archlinux-logout/archlinux-logout.py:505
+#: usr/share/archlinux-logout/archlinux-logout.py:616
+#, python-brace-format
+msgid "Hibernate ({key})"
+msgstr "休眠（{key}）"
+
+#: usr/share/archlinux-logout/GUI.py:565
+msgid ""
+"<span size=\"large\">You can change the lockscreen wallpaper\n"
+"with <b>Archlinux BetterLockScreen</b></span>"
+msgstr ""
+"<span size=\"large\">你可以使用 <b>Archlinux BetterLockScreen</b>\n"
+"更改锁屏壁纸</span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:91
+msgid "ArchLinux Logout"
+msgstr "ArchLinux Logout"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:177
+msgid "Open BetterLockScreen"
+msgstr "打开 BetterLockScreen"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:178
+msgid "Configure the lock screen wallpaper and blur"
+msgstr "配置锁屏壁纸和模糊效果"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:673
+msgid "No logout command could be detected for this desktop session."
+msgstr "未检测到此桌面会话的注销命令。"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:674
+msgid "Logout command not found"
+msgstr "未找到注销命令"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:708
+msgid ""
+"<span size=\"x-large\"><b>Caching lockscreen images for a faster locking "
+"next time</b></span>"
+msgstr ""
+"<span size=\"x-large\"><b>正在缓存锁屏图像，以便下次更快锁定</b></span>"
+
+#: usr/share/archlinux-logout/archlinux-logout.py:715
+msgid ""
+"<span size=\"x-large\"><b>Choose a wallpaper with archlinux-"
+"betterlockscreen</b></span>"
+msgstr ""
+"<span size=\"x-large\"><b>请使用 archlinux-betterlockscreen 选择壁纸</b></"
+"span>"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:5
+msgid "Configure the ArchLinux Logout screen — theme, icons, buttons, and text"
+msgstr "配置 ArchLinux Logout 界面：主题、图标、按钮和文字"
+
+#: po/archlinux-logout/archlinux-logout.desktop.in:11
+msgid "logout;shutdown;reboot;settings;theme;"
+msgstr "logout;shutdown;reboot;settings;theme;注销;关机;重启;设置;主题;"

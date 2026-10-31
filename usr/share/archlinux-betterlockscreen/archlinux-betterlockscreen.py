@@ -31,6 +31,7 @@ import gi  # noqa: E402
 import Functions as fn  # noqa: E402
 import GUI  # noqa: E402
 import Support  # noqa: E402
+from abl_i18n import _  # noqa: E402
 import subprocess  # noqa: E402
 import threading as th  # noqa: E402
 import webbrowser  # noqa: E402
@@ -42,7 +43,7 @@ from gi.repository import Gtk, GdkPixbuf, Gdk, GLib, Gio  # noqa
 
 class Main(Gtk.ApplicationWindow):
     def __init__(self, app):
-        super().__init__(application=app, title="ArchLinux BetterLockScreen")
+        super().__init__(application=app, title=_("ArchLinux BetterLockScreen"))
         self.set_default_size(1100, 700)
         self.connect("close-request", self.close)
         self._build_headerbar()
@@ -128,11 +129,11 @@ class Main(Gtk.ApplicationWindow):
 
     def on_apply_clicked(self, _widget):
         if self.image_path is None:
-            fn.show_in_app_notification(self, "You need to select an image first")
+            fn.show_in_app_notification(self, _("You need to select an image first"))
         else:
             self.btnset.set_sensitive(False)
             self.apply_spinner.start()
-            self.status.set_text("creating lockscreen images....wait for the message at the top")
+            self.status.set_text(_("creating lockscreen images....wait for the message at the top"))
             t = th.Thread(target=self.set_lockscreen)
             t.daemon = True
             t.start()
@@ -148,10 +149,10 @@ class Main(Gtk.ApplicationWindow):
                    "--blur", str(int(self.blur.get_value()) / 100)]
         try:
             subprocess.Popen(command, shell=False).wait()
-            fn.show_in_app_notification(self, "Lockscreen set successfully")
+            fn.show_in_app_notification(self, _("Lockscreen set successfully"))
             GLib.idle_add(self._apply_done, "")
         except Exception:
-            GLib.idle_add(self._apply_done, "ERROR: is betterlockscreen installed?")
+            GLib.idle_add(self._apply_done, _("ERROR: is betterlockscreen installed?"))
 
     def on_item_clicked(self, _flowbox, child):
         image = child.get_child()
@@ -172,7 +173,7 @@ class Main(Gtk.ApplicationWindow):
             self.fb.remove(child)
 
     def on_browse_clicked(self, _widget):
-        dialog = Gtk.FileDialog(title="Please choose a folder")
+        dialog = Gtk.FileDialog(title=_("Please choose a folder"))
         dialog.set_initial_folder(Gio.File.new_for_path(fn.home))
         dialog.select_folder(self, None, self._on_browse_response)
 
@@ -189,11 +190,11 @@ class Main(Gtk.ApplicationWindow):
         paths = paths.strip().rstrip("/") or fn.default_wallpapers
 
         if not fn.os.path.isdir(paths):
-            GLib.idle_add(self.status.set_text, "That directory not found!")
+            GLib.idle_add(self.status.set_text, _("That directory not found!"))
             return 0
         # Every way of loading (dropdown, Browse, Load, Default) passes here, so this remembers them all
         fn.save_path(paths)
-        GLib.idle_add(self.status.set_text, "Loading images...")
+        GLib.idle_add(self.status.set_text, _("Loading images..."))
         ext = (".png", ".jpg", ".jpeg", ".webp")
         images = []
         # followlinks stays False so a symlink loop can't make the walk endless
@@ -267,13 +268,13 @@ class BetterLockScreenApp(Gtk.Application):
             self._lock_parent.set_default_size(1, 1)
             self._lock_parent.present()
             dialog = Gtk.AlertDialog(
-                message="Lock File Found",
-                detail=(
+                message=_("Lock File Found"),
+                detail=_(
                     "The lock file has been found. This indicates there is already "
                     "an instance of ArchLinux Betterlockscreen GUI running.\n"
                     "Click Yes to remove the lock file and try running again."
                 ),
-                buttons=["No", "Yes"],
+                buttons=[_("No"), _("Yes")],
                 default_button=1,
                 cancel_button=0,
             )
@@ -294,8 +295,8 @@ class BetterLockScreenApp(Gtk.Application):
                 pass
             if pid and fn.checkIfProcessRunning(int(pid)):
                 alert = Gtk.AlertDialog(
-                    message="Application Running!",
-                    detail="You first need to close the existing application",
+                    message=_("Application Running!"),
+                    detail=_("You first need to close the existing application"),
                 )
                 alert.show(self._lock_parent)
             else:

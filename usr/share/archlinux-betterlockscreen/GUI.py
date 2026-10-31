@@ -2,6 +2,43 @@
 # =                  Author: Brad Heffernan                       =
 # =================================================================
 
+import os
+import sys
+
+import abl_i18n as i18n
+from abl_i18n import _
+
+
+def _language_controls(self, Gtk):
+    codes = [None, *i18n.available()]
+    labels = [_("System ({language})").format(language=i18n.name(i18n.SYSTEM))]
+    labels.extend(i18n.name(code) for code in codes[1:])
+    dropdown = Gtk.DropDown.new_from_strings(labels)
+    dropdown.set_tooltip_text(_("Language"))
+    dropdown.set_selected(codes.index(i18n.chosen()))
+
+    note = Gtk.Label(label="", xalign=0)
+    note.set_visible(False)
+    restart = Gtk.Button(label=_("Restart now"), visible=False)
+
+    def on_language_changed(_dropdown, _pspec):
+        code = codes[dropdown.get_selected()]
+        i18n.save_choice(code)
+        changed = (code or i18n.SYSTEM) != (i18n.ACTIVE or i18n.SYSTEM)
+        note.set_text(_("Saved. The app shows the new language when it starts again.") if changed else "")
+        note.set_visible(changed)
+        restart.set_visible(changed)
+
+    def on_restart(_widget):
+        argv = [sys.executable, os.path.abspath(sys.argv[0]), *sys.argv[1:]]
+        i18n.restore_environment()
+        os.execv(sys.executable, argv)
+
+    dropdown.connect("notify::selected", on_language_changed)
+    restart.connect("clicked", on_restart)
+    return dropdown, note, restart
+
+
 def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
 
     self.vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
@@ -22,26 +59,31 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # =======================================================
     #                       TOP BAR (content header)
     # =======================================================
-    title = Gtk.Label(label="ArchLinux BetterLockScreen", xalign=0)
+    title = Gtk.Label(label=_("ArchLinux BetterLockScreen"), xalign=0)
     title.set_name("blstitle")
     title.set_hexpand(True)
 
     version = fn.get_betterlockscreen_version()
-    ver_text = f"betterlockscreen v{version}" if version[:1].isdigit() else f"betterlockscreen {version}"
+    ver_text = _("betterlockscreen v{version}").format(version=version) if version[:1].isdigit() else _(
+        "betterlockscreen {version}"
+    ).format(version=version)
     lbl_version = Gtk.Label(label=ver_text)
     lbl_version.add_css_class("info-label")
     lbl_version.set_valign(Gtk.Align.CENTER)
 
-    btn_support = Gtk.Button(label="♥ Support")
-    btn_support.set_tooltip_text("Support development")
+    btn_support = Gtk.Button(label=_("♥ Support"))
+    btn_support.set_tooltip_text(_("Support development"))
     btn_support.add_css_class("support-button")
     btn_support.connect("clicked", self.on_support_clicked)
 
-    btn_quit = Gtk.Button(label="Quit")
+    btn_quit = Gtk.Button(label=_("Quit"))
     btn_quit.connect("clicked", self.close)
 
+    language_dropdown, language_note, btn_restart = _language_controls(self, Gtk)
     hbox_header.append(title)
     hbox_header.append(lbl_version)
+    hbox_header.append(language_dropdown)
+    hbox_header.append(btn_restart)
     hbox_header.append(btn_support)
     hbox_header.append(btn_quit)
 
@@ -76,17 +118,23 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
 
     self.notification_revealer.set_child(notification_bg)
 
+    language_note.set_margin_start(10)
+    language_note.set_margin_end(10)
+    self.vbox.append(hbox_header)
+    self.vbox.append(language_note)
+    self.vbox.append(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
+
     hbox1.append(self.notification_revealer)
     self.notification_revealer.set_hexpand(True)
 
     # ==========================================================
     #                       LOCATIONS
     # ==========================================================
-    lbl = Gtk.Label(label="Enter Location")
+    lbl = Gtk.Label(label=_("Enter Location"))
     self.loc.set_size_request(280, 0)
     btnbrowse = Gtk.Button(label="...")
-    btnsearch = Gtk.Button(label="Load")
-    btndefault = Gtk.Button(label="Default")
+    btnsearch = Gtk.Button(label=_("Load"))
+    btndefault = Gtk.Button(label=_("Default"))
 
     btnsearch.connect("clicked", self.on_load_clicked)
     btndefault.connect("clicked", self.on_default_clicked)
@@ -96,7 +144,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
 
     presets = fn.preset_folders()
     dd_presets = Gtk.DropDown.new_from_strings(presets)
-    dd_presets.set_tooltip_text("Known wallpaper folders - pick one to load it")
+    dd_presets.set_tooltip_text(_("Known wallpaper folders - pick one to load it"))
     # notify::selected only fires on a change, so start empty unless the current folder is a preset;
     # otherwise the preselected entry could never be picked
     current = self.loc.get_text()
@@ -119,9 +167,9 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # ==========================================================
     #                       SEARCH
     # ==========================================================
-    lblS = Gtk.Label(label="Search: ")
+    lblS = Gtk.Label(label=_("Search: "))
     self.search.set_size_request(180, 0)
-    btnsearcher = Gtk.Button(label="Search")
+    btnsearcher = Gtk.Button(label=_("Search"))
 
     btnsearcher.connect("clicked", self.on_search_clicked)
     btnsearcher.set_size_request(130, 0)
@@ -133,7 +181,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # ==========================================================
     #                       APPLY BUTTON
     # ==========================================================
-    lbl_lock_hint = Gtk.Label(label="To lock the screen: press Super + X, then K")
+    lbl_lock_hint = Gtk.Label(label=_("To lock the screen: press Super + X, then K"))
     lbl_lock_hint.add_css_class("info-label")
     lbl_lock_hint.set_halign(Gtk.Align.END)
     lbl_lock_hint.set_hexpand(True)
@@ -141,10 +189,10 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
 
     # Spins while betterlockscreen builds its lockscreen images, which takes several seconds
     self.apply_spinner = Gtk.Spinner()
-    self.apply_spinner.set_tooltip_text("Creating lockscreen images...")
+    self.apply_spinner.set_tooltip_text(_("Creating lockscreen images..."))
     hbox2.append(self.apply_spinner)
 
-    self.btnset = Gtk.Button(label="Apply Image")
+    self.btnset = Gtk.Button(label=_("Apply Image"))
     self.btnset.connect("clicked", self.on_apply_clicked)
     self.btnset.set_halign(Gtk.Align.END)
     hbox2.append(self.btnset)
@@ -152,7 +200,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # ==========================================================
     #                       CREDITS
     # ==========================================================
-    credits = Gtk.Button(label="Credits")
+    credits = Gtk.Button(label=_("Credits"))
     credits.connect("clicked", self.on_support_clicked)
     hbox2.prepend(credits)
 
@@ -175,7 +223,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     self.blur.set_size_request(100, 0)
     self.blur.set_valign(Gtk.Align.START)
 
-    label = Gtk.Label(label="Blur intensity")
+    label = Gtk.Label(label=_("Blur intensity"))
     hbox7.append(label)
     hbox7.append(self.blur)
     self.blur.set_hexpand(True)
@@ -186,8 +234,6 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     #                       PACK TO WINDOW
     # ==========================================================
 
-    self.vbox.append(hbox_header)    # top bar
-    self.vbox.append(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
     self.vbox.append(hbox1)          # notify
     self.vbox.append(hbox6)          # load row
     self.vbox.append(hbox8)          # search row
