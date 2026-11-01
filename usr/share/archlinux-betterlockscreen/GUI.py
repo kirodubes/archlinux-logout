@@ -132,6 +132,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     # ==========================================================
     lbl = Gtk.Label(label=_("Enter Location"))
     self.loc.set_size_request(280, 0)
+    self.loc.set_hexpand(True)
     btnbrowse = Gtk.Button(label="...")
     btnsearch = Gtk.Button(label=_("Load"))
     btndefault = Gtk.Button(label=_("Default"))
@@ -160,8 +161,7 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     hbox6.append(btnbrowse)
     hbox6.append(btnsearch)
 
-    btndefault.set_halign(Gtk.Align.END)
-    btndefault.set_hexpand(True)
+    btndefault.set_margin_start(20)
     hbox6.append(btndefault)
 
     # ==========================================================
@@ -219,13 +219,17 @@ def GUI(self, Gtk, GdkPixbuf, Gdk, th, fn):
     self.blur = Gtk.Scale(orientation=Gtk.Orientation.HORIZONTAL, adjustment=ad1)
     self.blur.set_digits(0)
     self.blur.set_hexpand(True)
-    self.blur.set_draw_value(True)
+    # Own value label: the scale's built-in value got clipped ("100" drawn as "00")
+    self.blur.set_draw_value(False)
     self.blur.set_size_request(100, 0)
-    self.blur.set_valign(Gtk.Align.START)
+    self.blur.set_valign(Gtk.Align.CENTER)
+    blur_value = Gtk.Label(label=str(int(ad1.get_value())), width_chars=3, xalign=1)
+    ad1.connect("value-changed", lambda adj: blur_value.set_text(str(int(adj.get_value()))))
 
     label = Gtk.Label(label=_("Blur intensity"))
     hbox7.append(label)
     hbox7.append(self.blur)
+    hbox7.append(blur_value)
     self.blur.set_hexpand(True)
 
     hbox2.prepend(hbox7)

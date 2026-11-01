@@ -146,8 +146,10 @@ class Main(Gtk.ApplicationWindow):
                    "--blur", str(int(self.blur.get_value()) / 100)]
         try:
             subprocess.Popen(command, shell=False).wait()
-            fn.show_in_app_notification(self, _("Lockscreen set successfully"))
-            GLib.idle_add(self._apply_done, "")
+            # GTK is not thread-safe: hand both updates to the main loop. The status line keeps the result
+            # after the 3-second banner is gone, since the job itself runs for half a minute.
+            GLib.idle_add(fn.show_in_app_notification, self, _("Lockscreen set successfully"))
+            GLib.idle_add(self._apply_done, _("Lockscreen set successfully"))
         except Exception:
             GLib.idle_add(self._apply_done, _("ERROR: is betterlockscreen installed?"))
 

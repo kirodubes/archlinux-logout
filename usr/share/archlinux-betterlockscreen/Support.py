@@ -40,6 +40,8 @@ class Support(Gtk.Window):
             os.path.join(base_dir, 'images/archlinux.png'), 100, 100)
         logo_image = Gtk.Picture()
         logo_image.set_paintable(Gdk.Texture.new_for_pixbuf(logo))
+        # Without a size request the Picture shrinks the logo to a few pixels
+        logo_image.set_size_request(100, 100)
 
         label.set_margin_start(10)
         label.set_margin_end(10)

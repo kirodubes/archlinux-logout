@@ -6,6 +6,9 @@
 - **BetterLockScreen no longer shows "Lock File Found"**. Changing the language and clicking **Restart now** opened
   that dialog, and its Yes button only answered "Application Running!", so the app could not start again. The lock
   file is gone: a second launch now raises the open window, and a crashed or killed app leaves nothing behind.
+- **BetterLockScreen layout fixes**: "Lockscreen set successfully" now shows after Apply Image and stays in the status
+  line; the Credits window shows the Arch logo instead of a tiny "^"; the blur value reads "100" instead of a clipped
+  "00"; the folder field uses the free width so the whole path shows.
 
 ### Technical Details
 - "Restart now" re-execs with `os.execv`, which keeps the PID and never ran `close()`, so the new process found the
@@ -15,9 +18,13 @@
   import. The dialog strings drop out of the catalogs (`make-mo.sh`).
 - archlinux-logout keeps its overlay lock: its Restart lives in `--settings`, which never creates the lock.
 - Tested on a VirtualBox install: double launch, Restart now (to Dutch and back) and kill + relaunch, no dialog.
+- The success banner was raised from the worker thread; both it and the status text now go through
+  `GLib.idle_add`. The Credits logo `Gtk.Picture` gets a 100x100 size request (it shrank to a few pixels). The blur
+  scale draws no value of its own; a 3-character label beside it follows the adjustment. `self.loc` expands instead
+  of the Default button. No new strings, so the catalogs are unchanged.
 
 ### Files Modified
-- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`, `Functions.py`
+- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`, `Functions.py`, `GUI.py`, `Support.py`
 - `po/archlinux-betterlockscreen/*`, `usr/share/locale/*/LC_MESSAGES/archlinux-betterlockscreen.mo`
 - `CLAUDE.md`, `CHANGELOG.md`
 
