@@ -2,7 +2,6 @@
 # =                  Author: Brad Heffernan                       =
 # =================================================================
 import os
-import psutil
 import gi
 from os.path import expanduser
 
@@ -109,16 +108,3 @@ def close_in_app_notification(self):
 def MessageBox(parent, title, message):
     dialog = Gtk.AlertDialog(message=title, detail=message)
     dialog.show(parent)
-
-
-def checkIfProcessRunning(processName):
-    for proc in psutil.process_iter():
-        try:
-            pinfo = proc.as_dict(attrs=['pid', 'name', 'create_time'])
-            if processName == pinfo['pid']:
-                return True
-        except (psutil.NoSuchProcess,
-                psutil.AccessDenied,
-                psutil.ZombieProcess):
-            pass
-    return False

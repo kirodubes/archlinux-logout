@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026.11.01
+
+### What Changed
+- **BetterLockScreen no longer shows "Lock File Found"**. Changing the language and clicking **Restart now** opened
+  that dialog, and its Yes button only answered "Application Running!", so the app could not start again. The lock
+  file is gone: a second launch now raises the open window, and a crashed or killed app leaves nothing behind.
+
+### Technical Details
+- "Restart now" re-execs with `os.execv`, which keeps the PID and never ran `close()`, so the new process found the
+  lock file plus a pid file holding its own PID. `Gtk.Application` (`org.archlinux.betterlockscreen`) already allows
+  one instance per session; `do_activate` now presents the existing window or builds `Main`.
+- Removed the `/tmp/archlinux-betterlock.{lock,pid}` writes, both dialogs, `checkIfProcessRunning` and the `psutil`
+  import. The dialog strings drop out of the catalogs (`make-mo.sh`).
+- archlinux-logout keeps its overlay lock: its Restart lives in `--settings`, which never creates the lock.
+- Tested on a VirtualBox install: double launch, Restart now (to Dutch and back) and kill + relaunch, no dialog.
+
+### Files Modified
+- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`, `Functions.py`
+- `po/archlinux-betterlockscreen/*`, `usr/share/locale/*/LC_MESSAGES/archlinux-betterlockscreen.mo`
+- `CLAUDE.md`, `CHANGELOG.md`
+
 ## 2026.10.31
 
 ### What Changed

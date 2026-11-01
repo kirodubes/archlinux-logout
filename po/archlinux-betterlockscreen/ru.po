@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"POT-Creation-Date: 2026-11-01 05:58+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Russian\n"
@@ -33,7 +33,8 @@ msgstr "Перезапустить сейчас"
 
 #: usr/share/archlinux-betterlockscreen/GUI.py:28
 msgid "Saved. The app shows the new language when it starts again."
-msgstr "Сохранено. Новый язык будет использоваться после перезапуска приложения."
+msgstr ""
+"Сохранено. Новый язык будет использоваться после перезапуска приложения."
 
 #: usr/share/archlinux-betterlockscreen/GUI.py:62
 #: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:46
@@ -119,60 +120,33 @@ msgstr ""
 "силой проекта. Благодаря помощи <b>Erik Dubois</b> мы смогли предложить "
 "пользователям простой и эффективный инструмент."
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:132
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:129
 msgid "You need to select an image first"
 msgstr "Сначала выберите изображение"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:136
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:133
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "Создаются изображения экрана блокировки... дождитесь сообщения вверху"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
 msgid "Lockscreen set successfully"
 msgstr "Экран блокировки настроен"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:155
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "ОШИБКА: установлен ли betterlockscreen?"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:176
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
 msgid "Please choose a folder"
 msgstr "Выберите папку"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:193
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
 msgid "That directory not found!"
 msgstr "Каталог не найден!"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
 msgid "Loading images..."
 msgstr "Загрузка изображений..."
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:271
-msgid "Lock File Found"
-msgstr "Найден файл блокировки"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:273
-msgid ""
-"The lock file has been found. This indicates there is already an instance of "
-"ArchLinux Betterlockscreen GUI running.\n"
-"Click Yes to remove the lock file and try running again."
-msgstr "Найден файл блокировки. Это означает, что ArchLinux Betterlockscreen GUI уже запущен.\nНажмите «Да», чтобы удалить файл и попробовать снова."
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "No"
-msgstr "Нет"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "Yes"
-msgstr "Да"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:298
-msgid "Application Running!"
-msgstr "Приложение запущено!"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:299
-msgid "You first need to close the existing application"
-msgstr "Сначала необходимо закрыть уже запущенное приложение"
 
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:2
 msgid "ArchLinux Betterlockscreen"
@@ -189,3 +163,27 @@ msgstr "Изменить изображение экрана блокировк�
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:11
 msgid "tool;twm;color;"
 msgstr "tool;twm;color;инструмент;оконный менеджер;цвет;"
+
+#~ msgid "Lock File Found"
+#~ msgstr "Найден файл блокировки"
+
+#~ msgid ""
+#~ "The lock file has been found. This indicates there is already an instance "
+#~ "of ArchLinux Betterlockscreen GUI running.\n"
+#~ "Click Yes to remove the lock file and try running again."
+#~ msgstr ""
+#~ "Найден файл блокировки. Это означает, что ArchLinux Betterlockscreen GUI "
+#~ "уже запущен.\n"
+#~ "Нажмите «Да», чтобы удалить файл и попробовать снова."
+
+#~ msgid "No"
+#~ msgstr "Нет"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "Application Running!"
+#~ msgstr "Приложение запущено!"
+
+#~ msgid "You first need to close the existing application"
+#~ msgstr "Сначала необходимо закрыть уже запущенное приложение"

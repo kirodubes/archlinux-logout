@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"POT-Creation-Date: 2026-11-01 05:58+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: French\n"
@@ -120,60 +120,33 @@ msgstr ""
 "Betterlockscreen. Avec l’aide de <b>Erik Dubois</b>, nous avons pu proposer "
 "à nos utilisateurs un outil simple et efficace."
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:132
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:129
 msgid "You need to select an image first"
 msgstr "Vous devez d’abord sélectionner une image"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:136
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:133
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "Création des images de verrouillage… attendez le message en haut"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
 msgid "Lockscreen set successfully"
 msgstr "Écran de verrouillage configuré"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:155
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "ERREUR : betterlockscreen est-il installé ?"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:176
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
 msgid "Please choose a folder"
 msgstr "Veuillez choisir un dossier"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:193
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
 msgid "That directory not found!"
 msgstr "Ce dossier est introuvable !"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
 msgid "Loading images..."
 msgstr "Chargement des images…"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:271
-msgid "Lock File Found"
-msgstr "Fichier de verrouillage trouvé"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:273
-msgid ""
-"The lock file has been found. This indicates there is already an instance of "
-"ArchLinux Betterlockscreen GUI running.\n"
-"Click Yes to remove the lock file and try running again."
-msgstr "Le fichier de verrouillage a été trouvé. Cela indique qu’une instance d’ArchLinux Betterlockscreen GUI est déjà en cours.\nCliquez sur Oui pour supprimer le fichier et réessayer."
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "No"
-msgstr "Non"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "Yes"
-msgstr "Oui"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:298
-msgid "Application Running!"
-msgstr "Application en cours d’exécution !"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:299
-msgid "You first need to close the existing application"
-msgstr "Vous devez d’abord fermer l’application en cours"
 
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:2
 msgid "ArchLinux Betterlockscreen"
@@ -190,3 +163,27 @@ msgstr "Modifier l’image de l’écran de verrouillage"
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:11
 msgid "tool;twm;color;"
 msgstr "tool;twm;color;outil;gestionnaire de fenêtres;couleur ;"
+
+#~ msgid "Lock File Found"
+#~ msgstr "Fichier de verrouillage trouvé"
+
+#~ msgid ""
+#~ "The lock file has been found. This indicates there is already an instance "
+#~ "of ArchLinux Betterlockscreen GUI running.\n"
+#~ "Click Yes to remove the lock file and try running again."
+#~ msgstr ""
+#~ "Le fichier de verrouillage a été trouvé. Cela indique qu’une instance "
+#~ "d’ArchLinux Betterlockscreen GUI est déjà en cours.\n"
+#~ "Cliquez sur Oui pour supprimer le fichier et réessayer."
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "Application Running!"
+#~ msgstr "Application en cours d’exécution !"
+
+#~ msgid "You first need to close the existing application"
+#~ msgstr "Vous devez d’abord fermer l’application en cours"

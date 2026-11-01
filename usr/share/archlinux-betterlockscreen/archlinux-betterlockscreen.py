@@ -83,9 +83,6 @@ class Main(Gtk.ApplicationWindow):
 
         GUI.GUI(self, Gtk, GdkPixbuf, Gdk, th, fn)
 
-        with open("/tmp/archlinux-betterlock.lock", "w") as f:
-            f.write("")
-
         # Defer flowbox loading so the window is shown first
         GLib.idle_add(self._load_initial_flowbox)
 
@@ -234,10 +231,6 @@ class Main(Gtk.ApplicationWindow):
         return True
 
     def close(self, widget):
-        try:
-            fn.os.unlink("/tmp/archlinux-betterlock.lock")
-        except Exception:
-            pass
         self.get_application().quit()
         return False
 
@@ -247,65 +240,12 @@ class BetterLockScreenApp(Gtk.Application):
         super().__init__(application_id="org.archlinux.betterlockscreen")
 
     def do_activate(self):
-        # A second launch activates this running instance again: raise its window instead of reporting our own
-        # lock file. The lock still catches what GTK can't: another session bus, a crash.
+        # GTK keeps one instance per session: a second launch lands here and raises the open window.
+        # No lock file: "Restart now" re-execs in the same PID and would trip over its own lock.
         window = self.get_active_window()
-        if window is not None:
-            window.present()
-            return
-        if not fn.os.path.isfile("/tmp/archlinux-betterlock.lock"):
-            try:
-                with open("/tmp/archlinux-betterlock.pid", "w") as f:
-                    f.write(str(fn.os.getpid()))
-            except PermissionError:
-                print("[WARN]: Could not write /tmp/archlinux-betterlock.pid")
-            win = Main(self)
-            win.present()
-        else:
-            # Create a temporary window as parent so dialogs have a transient parent
-            self._lock_parent = Gtk.Window(application=self)
-            self._lock_parent.set_decorated(False)
-            self._lock_parent.set_default_size(1, 1)
-            self._lock_parent.present()
-            dialog = Gtk.AlertDialog(
-                message=_("Lock File Found"),
-                detail=_(
-                    "The lock file has been found. This indicates there is already "
-                    "an instance of ArchLinux Betterlockscreen GUI running.\n"
-                    "Click Yes to remove the lock file and try running again."
-                ),
-                buttons=[_("No"), _("Yes")],
-                default_button=1,
-                cancel_button=0,
-            )
-            dialog.choose(self._lock_parent, None, self._on_lock_dialog_response)
-
-    def _on_lock_dialog_response(self, dialog, result):
-        try:
-            button = dialog.choose_finish(result)
-        except Exception:
-            self._lock_parent.destroy()
-            return
-        if button == 1:  # Yes
-            pid = ""
-            try:
-                with open("/tmp/archlinux-betterlock.pid", "r") as f:
-                    pid = f.read().strip()
-            except Exception:
-                pass
-            if pid and fn.checkIfProcessRunning(int(pid)):
-                alert = Gtk.AlertDialog(
-                    message=_("Application Running!"),
-                    detail=_("You first need to close the existing application"),
-                )
-                alert.show(self._lock_parent)
-            else:
-                fn.os.unlink("/tmp/archlinux-betterlock.lock")
-                self._lock_parent.destroy()
-                self.do_activate()
-        else:
-            self._lock_parent.destroy()
-            self.quit()
+        if window is None:
+            window = Main(self)
+        window.present()
 
 
 if __name__ == "__main__":

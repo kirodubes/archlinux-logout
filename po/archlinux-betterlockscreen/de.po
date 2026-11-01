@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 16:39+0100\n"
+"POT-Creation-Date: 2026-11-01 05:58+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German\n"
@@ -112,62 +112,40 @@ msgid ""
 "<b>Brad Heffernan</b> is the driving force aka developer behind the "
 "Betterlockscreen GUI. With the help of <b>Erik Dubois</b> we were able to "
 "give our users an easy and efficient tool."
-msgstr "Ein großes Dankeschön an unsere Entwickler für ihre Arbeit an diesem Projekt.\n<b>Brad Heffernan</b> ist die treibende Kraft und der Entwickler der Betterlockscreen-GUI. Mit Unterstützung von <b>Erik Dubois</b> konnten wir unseren Nutzern ein einfaches und effizientes Tool anbieten."
+msgstr ""
+"Ein großes Dankeschön an unsere Entwickler für ihre Arbeit an diesem "
+"Projekt.\n"
+"<b>Brad Heffernan</b> ist die treibende Kraft und der Entwickler der "
+"Betterlockscreen-GUI. Mit Unterstützung von <b>Erik Dubois</b> konnten wir "
+"unseren Nutzern ein einfaches und effizientes Tool anbieten."
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:132
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:129
 msgid "You need to select an image first"
 msgstr "Wähle zuerst ein Bild aus"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:136
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:133
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "Sperrbildschirmbilder werden erstellt... Warte auf die Meldung oben"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
 msgid "Lockscreen set successfully"
 msgstr "Sperrbildschirm eingerichtet"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:155
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "FEHLER: Ist betterlockscreen installiert?"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:176
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
 msgid "Please choose a folder"
 msgstr "Wähle einen Ordner aus"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:193
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
 msgid "That directory not found!"
 msgstr "Das Verzeichnis wurde nicht gefunden!"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
 msgid "Loading images..."
 msgstr "Bilder werden geladen..."
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:271
-msgid "Lock File Found"
-msgstr "Sperrdatei gefunden"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:273
-msgid ""
-"The lock file has been found. This indicates there is already an instance of "
-"ArchLinux Betterlockscreen GUI running.\n"
-"Click Yes to remove the lock file and try running again."
-msgstr "Die Sperrdatei wurde gefunden. Das bedeutet, dass ArchLinux Betterlockscreen GUI bereits läuft.\nKlicke auf Ja, um die Sperrdatei zu entfernen und die Anwendung erneut zu starten."
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "No"
-msgstr "Nein"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:277
-msgid "Yes"
-msgstr "Ja"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:298
-msgid "Application Running!"
-msgstr "Anwendung läuft!"
-
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:299
-msgid "You first need to close the existing application"
-msgstr "Du musst zuerst die laufende Anwendung schließen"
 
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:2
 msgid "ArchLinux Betterlockscreen"
@@ -184,3 +162,28 @@ msgstr "Das Hintergrundbild des Sperrbildschirms ändern"
 #: po/archlinux-betterlockscreen/archlinux-betterlockscreen.desktop.in:11
 msgid "tool;twm;color;"
 msgstr "tool;twm;color;werkzeug;fenstermanager;farbe;"
+
+#~ msgid "Lock File Found"
+#~ msgstr "Sperrdatei gefunden"
+
+#~ msgid ""
+#~ "The lock file has been found. This indicates there is already an instance "
+#~ "of ArchLinux Betterlockscreen GUI running.\n"
+#~ "Click Yes to remove the lock file and try running again."
+#~ msgstr ""
+#~ "Die Sperrdatei wurde gefunden. Das bedeutet, dass ArchLinux "
+#~ "Betterlockscreen GUI bereits läuft.\n"
+#~ "Klicke auf Ja, um die Sperrdatei zu entfernen und die Anwendung erneut zu "
+#~ "starten."
+
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "Application Running!"
+#~ msgstr "Anwendung läuft!"
+
+#~ msgid "You first need to close the existing application"
+#~ msgstr "Du musst zuerst die laufende Anwendung schließen"

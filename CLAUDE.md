@@ -37,7 +37,9 @@ Max line length is 120. Always run flake8 before considering any Python change d
 - After changing any visible text: `po/archlinux-logout/make-mo.sh` and/or `po/archlinux-betterlockscreen/make-mo.sh`.
   Edit menu entries in `po/<app>/<app>.desktop.in`, never in `usr/share/applications/` (overwritten).
 - Never start the logout overlay in an automated test: its power keys are live. Screenshot only `--settings` and
-  BetterLockScreen, and remove `/tmp/archlinux-betterlock.{lock,pid}` afterwards (killing the GUI leaves them).
+  BetterLockScreen.
+- BetterLockScreen has no lock/pid file (removed 2026-11-01): `Gtk.Application` is the single-instance guard, and
+  "Restart now" re-execs in the same PID, so any lock file trips over itself. Don't bring one back.
 
 ## Architecture
 
