@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 05:58+0100\n"
+"POT-Creation-Date: 2026-11-01 06:06+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Hungarian\n"
@@ -65,15 +65,15 @@ msgstr "Kilépés"
 msgid "Enter Location"
 msgstr "Hely megadása"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:136
+#: usr/share/archlinux-betterlockscreen/GUI.py:137
 msgid "Load"
 msgstr "Betöltés"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:137
+#: usr/share/archlinux-betterlockscreen/GUI.py:138
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:147
+#: usr/share/archlinux-betterlockscreen/GUI.py:148
 msgid "Known wallpaper folders - pick one to load it"
 msgstr "Ismert háttérkép-mappák: válassz egyet a betöltéshez"
 
@@ -102,7 +102,7 @@ msgstr "Kép alkalmazása"
 msgid "Credits"
 msgstr "Közreműködők"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:226
+#: usr/share/archlinux-betterlockscreen/GUI.py:229
 msgid "Blur intensity"
 msgstr "Elmosás erőssége"
 
@@ -126,23 +126,29 @@ msgstr "Először válassz ki egy képet"
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "Zárolási képek készülnek... várd meg a fenti üzenetet"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:150
+#, python-brace-format
+msgid "Creating the lockscreen images failed (exit code {code})"
+msgstr "A zárolási képernyő képeinek létrehozása sikertelen (kilépési kód: {code})"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:156
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:157
 msgid "Lockscreen set successfully"
 msgstr "A zárolási képernyő beállítva"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:159
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "HIBA: telepítve van a betterlockscreen?"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:180
 msgid "Please choose a folder"
 msgstr "Válassz mappát"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
 msgid "That directory not found!"
 msgstr "A mappa nem található!"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:201
 msgid "Loading images..."
 msgstr "Képek betöltése..."
 

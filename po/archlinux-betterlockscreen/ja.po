@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 05:58+0100\n"
+"POT-Creation-Date: 2026-11-01 06:06+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Japanese\n"
@@ -65,15 +65,15 @@ msgstr "終了"
 msgid "Enter Location"
 msgstr "場所を入力"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:136
+#: usr/share/archlinux-betterlockscreen/GUI.py:137
 msgid "Load"
 msgstr "読み込む"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:137
+#: usr/share/archlinux-betterlockscreen/GUI.py:138
 msgid "Default"
 msgstr "既定"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:147
+#: usr/share/archlinux-betterlockscreen/GUI.py:148
 msgid "Known wallpaper folders - pick one to load it"
 msgstr "既知の壁紙フォルダー: 選択して読み込み"
 
@@ -102,7 +102,7 @@ msgstr "画像を適用"
 msgid "Credits"
 msgstr "クレジット"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:226
+#: usr/share/archlinux-betterlockscreen/GUI.py:229
 msgid "Blur intensity"
 msgstr "ぼかしの強さ"
 
@@ -125,23 +125,29 @@ msgstr "最初に画像を選択してください"
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "ロック画面の画像を作成しています... 上部のメッセージをお待ちください"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:150
+#, python-brace-format
+msgid "Creating the lockscreen images failed (exit code {code})"
+msgstr "ロック画面の画像を作成できませんでした（終了コード {code}）"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:156
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:157
 msgid "Lockscreen set successfully"
 msgstr "ロック画面を設定しました"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:159
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "エラー: betterlockscreen はインストールされていますか？"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:180
 msgid "Please choose a folder"
 msgstr "フォルダーを選択してください"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
 msgid "That directory not found!"
 msgstr "そのディレクトリが見つかりません！"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:201
 msgid "Loading images..."
 msgstr "画像を読み込んでいます..."
 

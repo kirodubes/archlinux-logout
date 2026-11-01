@@ -145,7 +145,12 @@ class Main(Gtk.ApplicationWindow):
         command = ["betterlockscreen", "-u", self.image_path,
                    "--blur", str(int(self.blur.get_value()) / 100)]
         try:
-            subprocess.Popen(command, shell=False).wait()
+            code = subprocess.Popen(command, shell=False).wait()
+            if code != 0:
+                msg = _("Creating the lockscreen images failed (exit code {code})").format(code=code)
+                GLib.idle_add(fn.show_in_app_notification, self, msg)
+                GLib.idle_add(self._apply_done, msg)
+                return
             # GTK is not thread-safe: hand both updates to the main loop. The status line keeps the result
             # after the 3-second banner is gone, since the job itself runs for half a minute.
             GLib.idle_add(fn.show_in_app_notification, self, _("Lockscreen set successfully"))

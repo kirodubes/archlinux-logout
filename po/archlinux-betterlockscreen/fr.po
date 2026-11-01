@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: archlinux-betterlockscreen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 05:58+0100\n"
+"POT-Creation-Date: 2026-11-01 06:06+0100\n"
 "PO-Revision-Date: 2026-10-31 16:39+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: French\n"
@@ -67,15 +67,15 @@ msgstr "Quitter"
 msgid "Enter Location"
 msgstr "Saisir l’emplacement"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:136
+#: usr/share/archlinux-betterlockscreen/GUI.py:137
 msgid "Load"
 msgstr "Charger"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:137
+#: usr/share/archlinux-betterlockscreen/GUI.py:138
 msgid "Default"
 msgstr "Par défaut"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:147
+#: usr/share/archlinux-betterlockscreen/GUI.py:148
 msgid "Known wallpaper folders - pick one to load it"
 msgstr "Dossiers connus de fonds d’écran : choisissez-en un à charger."
 
@@ -104,7 +104,7 @@ msgstr "Appliquer l’image"
 msgid "Credits"
 msgstr "Crédits"
 
-#: usr/share/archlinux-betterlockscreen/GUI.py:226
+#: usr/share/archlinux-betterlockscreen/GUI.py:229
 msgid "Blur intensity"
 msgstr "Intensité du flou"
 
@@ -128,23 +128,29 @@ msgstr "Vous devez d’abord sélectionner une image"
 msgid "creating lockscreen images....wait for the message at the top"
 msgstr "Création des images de verrouillage… attendez le message en haut"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:149
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:150
+#, python-brace-format
+msgid "Creating the lockscreen images failed (exit code {code})"
+msgstr "Échec de la création des images de l'écran de verrouillage (code de sortie {code})"
+
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:156
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:157
 msgid "Lockscreen set successfully"
 msgstr "Écran de verrouillage configuré"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:152
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:159
 msgid "ERROR: is betterlockscreen installed?"
 msgstr "ERREUR : betterlockscreen est-il installé ?"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:173
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:180
 msgid "Please choose a folder"
 msgstr "Veuillez choisir un dossier"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:190
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:197
 msgid "That directory not found!"
 msgstr "Ce dossier est introuvable !"
 
-#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:194
+#: usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py:201
 msgid "Loading images..."
 msgstr "Chargement des images…"
 

@@ -9,6 +9,8 @@
 - **BetterLockScreen layout fixes**: "Lockscreen set successfully" now shows after Apply Image and stays in the status
   line; the Credits window shows the Arch logo instead of a tiny "^"; the blur value reads "100" instead of a clipped
   "00"; the folder field uses the free width so the whole path shows.
+- **A failed Apply Image now says so** ("Creating the lockscreen images failed (exit code N)") instead of reporting
+  success, in all 13 languages.
 
 ### Technical Details
 - "Restart now" re-execs with `os.execv`, which keeps the PID and never ran `close()`, so the new process found the
@@ -21,7 +23,10 @@
 - The success banner was raised from the worker thread; both it and the status text now go through
   `GLib.idle_add`. The Credits logo `Gtk.Picture` gets a 100x100 size request (it shrank to a few pixels). The blur
   scale draws no value of its own; a 3-character label beside it follows the adjustment. `self.loc` expands instead
-  of the Default button. No new strings, so the catalogs are unchanged.
+  of the Default button.
+- `set_lockscreen` checks betterlockscreen's exit code. One new string, translated in every `.po` (msgmerge had
+  fuzzy-matched it to "Creating lockscreen images...", replaced). Tested on the VM with a stub betterlockscreen that
+  exits 1 (Dutch, `ABL_LANGUAGE=nl`) and with the real one (success).
 
 ### Files Modified
 - `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`, `Functions.py`, `GUI.py`, `Support.py`
