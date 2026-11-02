@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.11.02
+
+### What Changed
+- **archlinux-logout and BetterLockScreen start when `~/.config` does not exist.** On a fresh or wiped account both
+  crashed at launch with `FileNotFoundError: ... '~/.config/archlinux-logout'` (seen on pure Arch with ohmychadwm
+  after `~/.config` was removed).
+
+### Technical Details
+- Both apps created their config folder with `os.mkdir`, which cannot create the missing parent `~/.config`. They now
+  use `os.makedirs(..., exist_ok=True)`, as `alo_i18n.py` / `abl_i18n.py` already did for `prefs.json`.
+
+### Files Modified
+- `usr/share/archlinux-logout/archlinux-logout.py`
+- `usr/share/archlinux-betterlockscreen/archlinux-betterlockscreen.py`
+- `CHANGELOG.md`
+
 ## 2026.11.01
 
 ### What Changed

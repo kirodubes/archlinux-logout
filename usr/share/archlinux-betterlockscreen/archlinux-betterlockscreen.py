@@ -51,8 +51,8 @@ class Main(Gtk.ApplicationWindow):
         self.timeout_id = None
         self.image_path = None
 
-        if not fn.os.path.isdir(fn.config):
-            fn.os.mkdir(fn.config)
+        # makedirs: ~/.config itself may be missing on a fresh or wiped account
+        fn.os.makedirs(fn.config, exist_ok=True)
 
         if not fn.os.path.isfile(fn.config + fn.settings):
             with open(fn.config + fn.settings, "w") as f:

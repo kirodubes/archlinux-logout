@@ -107,8 +107,8 @@ class TransparentWindow(Gtk.ApplicationWindow):
         self.connect("notify::fullscreened", self.on_window_state_changed)
         self.__is_fullscreen = False
 
-        if not fn.os.path.isdir(fn.home + "/.config/archlinux-logout"):
-            fn.os.mkdir(fn.home + "/.config/archlinux-logout")
+        # makedirs: ~/.config itself may be missing on a fresh or wiped account
+        fn.os.makedirs(fn.home + "/.config/archlinux-logout", exist_ok=True)
 
         if not fn.os.path.isfile(
             fn.home + "/.config/archlinux-logout/archlinux-logout.conf"
