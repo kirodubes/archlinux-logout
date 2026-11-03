@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.11.03
+
+### What Changed
+- **Logout works in the new Kiro Hyprland Impasto session.** Its session name `kiro-hyprland-impasto` had no branch,
+  so the logout button would have fallen through to a `pkill` that matches no process.
+
+### Technical Details
+- `kiro-hyprland-impasto` and `/usr/share/wayland-sessions/kiro-hyprland-impasto` added to the Hyprland tuple in
+  `_get_logout()`: the same uwsm stop / `hl.dsp.exit()` exit as the noctalia edition. impasto's Quickshell shell is a
+  Wayland client and ends with the compositor.
+
+### Files Modified
+- usr/share/archlinux-logout/Functions.py
+
 ## 2026.11.02
 
 ### What Changed
