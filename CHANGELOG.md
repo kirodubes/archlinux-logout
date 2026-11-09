@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026.11.09
+
+### What Changed
+- **Logout works in the new Kiro Hyprland Caelestia session.** Its session name `kiro-hyprland-caelestia` had no
+  entry, so logout would have fallen through to a `pkill` that matches nothing.
+
+### Technical Details
+- `_get_logout()`: `kiro-hyprland-caelestia` and `/usr/share/wayland-sessions/kiro-hyprland-caelestia` join the
+  Hyprland branch (uwsm stop, else the Lua exit). The Caelestia shell is a Quickshell Wayland client and ends with
+  the compositor, like impasto's.
+
+### Files Modified
+- `usr/share/archlinux-logout/Functions.py`, `CHANGELOG.md`
+
 ## 2026.11.07
 
 ### What Changed
